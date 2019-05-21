@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>字符串补全长度</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//如果某个字符串不够指定长度，会在头部或尾部补全。padStart()用于头部补全，padEnd()用于尾部补全。
+
+	console.log('x'.padStart(6,'abc'))//abcabx
+	console.log('x'.padEnd(6,'abc'))//xabcab
+
+	console.log('20'.padStart(10,'xxxx-yy-zz'))//xxxx-yy-20
+	console.log('10-25'.padStart(10,'xxxx-yy-zz'))//xxxx-10-25
+
+	console.log('2'.padStart(10,'0'))//0000000002
+	console.log('36589'.padStart(10,'0'))//0000036589
+	
+</script>
+</html>

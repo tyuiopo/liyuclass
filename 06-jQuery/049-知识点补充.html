@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>知识点补充</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 150px;
+			height:80px;
+			border: 1px solid #000;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div>div1</div>
+	<div class="div2">div2</div>
+	<div class="div3" style="display: none;"></div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		function fn(){
+			console.log(this);
+		};
+		fn();
+
+		// $.proxy(函数,内部this)//改变函数的内部this指向
+		$.proxy(fn,{name:'tom'});
+
+		//hover事件
+		/*
+		$('div').hover(function(){
+			console.log('aaaa')
+		},function(){
+			console.log('bbbb')
+		})
+		*/
+
+
+		//jQuery对象.is(选择器) ,检测jQuery对象中是否有匹配元素
+		// console.log($('div').is('.div2'));
+
+
+		//可见性过滤
+		console.log($('.div3:hidden'));//匹配所有不可见元素
+		console.log($('div:visible'));//匹配所有可见元素
+	})
+</script>
+</html>

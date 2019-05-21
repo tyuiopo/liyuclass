@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>操作css</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box1{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			margin-bottom: 10px;
+		}
+		.box2{
+			width: 200px;
+			height: 200px;
+			background-color: blue;
+		}
+		.box3{
+			background-color: #ff6700;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">我是1</div>
+	<div class="box2">我是2</div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		console.log($('div').css('width'));//获取
+		console.log($('div').css('width','300px'));//设置1
+		console.log($('div').css('width','300px').addClass('box3'));
+		console.log($('div').css('width','300px').css('height','300px'));//设置2
+		console.log($('div').css({
+			width:'400px',
+			height:'400px'
+		}));//设置3
+	})
+</script>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	//await只能放到async函数体中
+	//await is only valid in async function
+	function fn(){
+		await 'hi'
+	}
+	fn()
+	*/
+	
+	/*
+	//await表示后面的处理需要等待,如果不是 Promise 对象，就直接返回对应的值。
+	async function fn(){
+		let data= await 'hello';
+		//let data='hello'
+		console.log(data)
+	}
+	fn();
+	*/
+	let promise=new Promise((resolve,reject)=>{
+		setTimeout(()=>{
+			resolve('good')
+		})
+	})
+	
+	/*
+	async function fn(){
+		let p = await promise;
+		console.log(p)//await表示后面的处理需要等待,通常await后面是一个 Promise 对象，返回该对象的结果。
+	}
+	fn();
+	*/
+
+
+	/*
+	async function fn(){
+		await Promise.reject('失败了');
+		//await命令后面的 Promise 对象如果变为reject状态，程序中止
+		console.log('aaaa');
+	}
+	fn()//async函数返回一个 Promise 对象
+	//reject的参数会被catch方法的回调函数接收到
+	.catch(err=>{
+		console.log(err)
+	})
+	*/
+
+
+	async function fn(){
+		try{
+			await Promise.reject('失败了');
+		}
+		catch(err){
+			console.log(err)
+		}
+		try{
+			let p = await promise;
+			console.log(p)
+		}
+		catch(err){
+			console.log(err)
+		}
+	}
+	fn();
+</script>
+</html>

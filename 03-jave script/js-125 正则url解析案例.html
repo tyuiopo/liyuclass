@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js-125 正则url解析案例</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var str='this is a webite https://www.kuazhu.com'
+
+	var reg=/([a-z]+)\:\/\/([a-z]+)\.([\w]+)\.([\w]){2,5}/
+
+	console.log(str.match(reg))
+</script>
+</html>

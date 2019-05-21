@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>57-jsBOM window里面的history对象</title>
+</head>
+<body>
+	<a href="http://www.kuazhu.com">跨猪</a>
+	<input type="button" id="btn1" value="前进">
+	<input type="button" id="btn2" value="后退">
+</body>
+<script>
+	var oBtn1=document.getElementById('btn1');
+	var oBtn2=document.getElementById('btn2');
+	oBtn1.onclick=function(){
+		// window.history.go(1);
+		window.history.forward();
+	}
+	oBtn2.onclick=function(){
+		// window.history.go(-1);
+		window.history.back();
+	}
+</script>
+</html>

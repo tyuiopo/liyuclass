@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>13-js进阶 闭包</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function fn(){
+		var n=1;
+		add=function(){
+			n++;
+		}
+		return function(){
+			return n;
+		}
+	}
+
+	var retule=fn();
+	console.log(retule());//1
+	add();
+	console.log(retule());//2
+</script>
+</html>

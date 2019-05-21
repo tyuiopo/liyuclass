@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>62-js时间案例</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background: #000;
+		}
+		#time{
+			margin: 100px auto;
+			text-align: center;
+			color: #fff;
+			font-size: 60px;
+		}
+	</style>
+</head>
+<body>
+	<div id="time"></div>
+</body>
+<script>
+	var aTime=document.getElementById('time');
+
+	function Time(){
+		var today=new Date();
+		var iHours=today.getHours();
+		var iMinutes =today.getMinutes();
+		var iSeconds=today.getSeconds();
+		var newTime=to2num(iHours)+':'+to2num(iMinutes)+':'+to2num(iSeconds);
+		
+		aTime.innerHTML=newTime;
+	}
+	Time();
+
+	function to2num(num){
+		/*
+		if(num<10){
+			return '0'+num;
+		}else{
+			return ''+num;
+		}
+		*/
+		return num<10 ? '0'+num : ''+num;
+	}
+	
+	setInterval(Time,1000);
+
+</script>
+</html>

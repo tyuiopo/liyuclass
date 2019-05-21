@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>65-js 延迟菜单案例</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 500px;
+			height: 500px;
+			margin: 100px auto;
+		}
+		.left{
+			float: left;
+			width: 50px;
+			height: 200px;
+			background: yellow;
+			margin-right: 30px;
+		}
+		.right{
+			float: left;
+			width: 200px;
+			height: 200px;
+			background: purple;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="left"></div>
+		<div class="right"></div>
+	</div>
+</body>
+<script>
+	var oLeft=document.querySelector('.left');
+	var oRight=document.querySelector('.right');
+	var Temr=0;
+	/*oLeft.onmouseover=function(){
+		clearTimeout(Temr);
+		oRight.style.display='block';
+	}
+	oLeft.onmouseout=function(){
+		Temr=setTimeout(function(){
+			oRight.style.display='none'
+		},500)
+	}
+	oRight.onmouseover=function(){
+		clearTimeout(Temr);
+		oRight.style.display='block';
+	}
+	oRight.onmouseout=function(){
+		Temr=setTimeout(function(){
+			oRight.style.display='none';
+		},500)
+	}
+	*/
+	oLeft.onmouseover=oRight.onmouseover=function(){
+		clearTimeout(Temr);
+		oRight.style.display='block';
+	}
+	oLeft.onmouseout=oRight.onmouseout=function(){
+		Temr=setTimeout(function(){
+			oRight.style.display='none'
+		},500)
+	}
+</script>
+</html>

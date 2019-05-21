@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		{{message}}
+		<p ref="ppp">你好</p>
+	</div>
+</body>
+<script src="vue/vue.js"></script>
+<script>
+	let vm = new Vue({
+		el:'#app',
+		data:{
+			message:'hello Vue'
+		},
+		//创建阶段
+		beforeCreate(){
+			console.log('创建 beforeCreate')
+			console.log('this.message:',this.message);//拿不到
+			console.log('this.$el:',this.$el);//拿不到
+			console.log('this.$refs.ppp:',this.$refs.ppp);//拿不到
+		},
+		created(){
+			console.log('创建 created')
+			console.log('this.message:',this.message);//拿到
+			console.log('this.$el:',this.$el);//拿不到
+			console.log('this.$refs.ppp:',this.$refs.ppp);//拿不到
+		},
+		//挂载阶段
+		beforeMount(){
+			console.log('挂载 beforeMount')
+			console.log('this.message:',this.message);//拿到
+			console.log('this.$el:',this.$el);//拿到
+			console.log('this.$refs.ppp:',this.$refs.ppp);//拿不到
+		},
+		mounted(){
+			console.log('挂载 mounted')
+			console.log('this.message:',this.message);//拿到
+			console.log('this.$el:',this.$el);//拿到
+			console.log('this.$refs.ppp:',this.$refs.ppp);//拿到
+		},
+		//更新阶段
+		beforeUpdate(){
+			console.log('更新 beforeUpdate')
+		},
+		updated(){
+			console.log('更新 updated')
+		},
+		//销毁阶段
+		beforeDestroy(){
+			console.log('销毁 beforeDestroy')
+		},
+		destroyed(){
+			console.log('销毁 destroyed')
+		}
+	})
+</script>
+</html>

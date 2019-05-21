@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery对象和DOM对象转换</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 50px;
+			height: 50px;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<button>点击</button>
+	<div class="div1">258</div>
+	<div id="box1">369</div>
+	<div></div>
+	<div class="box3">147</div>
+	<div class="box3"></div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	//jQuery对象-->DOM对象转换
+	$(function(){
+		console.log($(document.querySelector('.div1')))
+	})
+
+
+	//jQuery对象->DOM对象
+	$(function(){
+		console.log($('#box1').get(0));
+		console.log($('#box1')[0]);
+	})
+</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>操作代码、文本、值</title>
+</head>
+<body>
+	<div>
+		我是div
+		<p>你好！</p>
+	</div>
+	<input type="text" value="sjhsd">
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		console.log($('div').html());//获取HTNL中内容
+		// $('div').html('<h>我是大标题</h>');//设置HTML中内容;相当于innerHTML
+		// console.log($('div').html('<h>我是大标题</h>'));
+
+		console.log($('div').text());//获取HTNL中登文本内容
+		// $('div').text('<h>我是大标题</h>');//设置HTML中文本内容;相当于innerTEXT
+
+		console.log($('input').val());//获取元素value属性的值
+		// console.log($('input').val('aaa'));//设置元素value属性的值
+
+
+		/*
+			innerHTML和innerText的区别 
+			1.获取HTML内容包括HTML标签和文本，而获取文本内容只有标签里面的文本
+			2.设置带有标签的HTML内容,标签会起作用，而设置带有标签的文本内容，标签会被当做文本来显示
+		*/
+	})
+</script>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>菜单滚动练习</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father{
+			width:600px;
+			height: 600px;
+			border:1px solid #000;
+			margin:100px auto;
+			text-align: center;
+		}
+		.son{
+			float: left;
+		}
+		.son li{
+			list-style: none;
+			width: 150px;
+			height:50px;
+			line-height: 50px;
+			background-color: pink;
+			border:1px solid gray;
+			margin:0 25px;
+			box-sizing:border-box;
+		}
+		li:first-child~li{
+			opacity: 0;
+		}
+		li:nth-child(1){
+			background-color: yellow;
+		}
+		ul:hover li:nth-child(1){
+			transform: rotateY(0deg);
+			opacity: 1;
+		}
+		ul:hover li:nth-child(2){
+			transform: rotateY(360deg);
+			transition-duration:2.5s;
+			opacity: 1;
+		}
+		ul:hover li:nth-child(3){
+			transform: rotateY(360deg);
+			transition-duration:3.5s;
+			opacity: 1;
+		}
+		ul:hover li:nth-child(4){
+			transform: rotateY(360deg);
+			transition-duration:4.5s;
+			opacity: 1;
+		}
+		li:nth-child(2){
+			transform: rotateY(180deg);
+			transition-duration: 4.5s;
+			opacity: 1;
+		}
+		li:nth-child(3){
+			transform: rotateY(180deg);
+			transition-duration: 3.5s;
+			opacity: 1;
+		}
+		li:nth-child(4){
+			transform: rotateY(180deg);
+			transition-duration: 2.5s;
+			opacity: 1;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<ul class="son">
+			<li>一级菜单</li>
+			<li>二级菜单</li>
+			<li>三级菜单</li>
+			<li>四级菜单</li>
+		</ul>
+		<ul class="son">
+			<li>一级菜单</li>
+			<li>二级菜单</li>
+			<li>三级菜单</li>
+			<li>四级菜单</li>
+		</ul>
+		<ul class="son">
+			<li>一级菜单</li>
+			<li>二级菜单</li>
+			<li>三级菜单</li>
+			<li>四级菜单</li>
+		</ul>
+	</div>
+</body>
+</html>

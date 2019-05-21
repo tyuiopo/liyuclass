@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery原理分析-核心函数</title>
+</head>
+<body>
+	<div id="box"></div>
+	<div></div>
+	<div></div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script src="js/kquery-1.0.1.js"></script>
+<script>
+	//1.布尔值是false
+	console.log('1111',jQuery(false));
+	console.log('1222',jQuery(''));
+	console.log('1333',jQuery(0));
+	console.log('1444',jQuery(undefined));
+	console.log('1555',jQuery(null));
+	console.log('1666',jQuery(NaN));
+
+	//2.函数
+	console.log('2111',jQuery(function(){}));
+
+	//3.字符串
+	//3.1 html代码
+	console.log('3111',jQuery('<h1>我是标题</h1>'));
+	//3.2 选择器
+	console.log('3222',jQuery('div'));
+
+	//4.数组
+	//4.1 真数组
+	var arr=[1,2,3,4,6,8];
+	console.log('4111',jQuery(arr));
+	//4.2伪数组
+	var arrLick={0:'aa',1:'bb',length:2};
+	console.log('4222',jQuery(arrLick));
+
+	//5. 对象
+	//5.1 普通对象
+	var obj={name:'tom',age:18};
+	console.log('5111',jQuery(obj));
+	//5.2 DOM对象
+	var dom=document.getElementById('box');
+	console.log('5222',jQuery(dom));
+
+
+
+
+	//1.布尔值是false
+	console.log('1111',$(false));
+	console.log('1222',$(''));
+	console.log('1333',$(0));
+	console.log('1444',$(undefined));
+	console.log('1555',$(null));
+	console.log('1666',$(NaN));
+
+	//2.函数
+	console.log('2111',$(function(){}));
+
+	//3.字符串
+	//3.1 html代码
+	console.log('3111',$('<h1>我是标题</h1><div><span><span></div>'));
+	//3.2 选择器
+	console.log('3222',$('div'));
+
+	//4.数组
+	//4.1 真数组
+	var arr=[1,2,3,4,6,8];
+	console.log('4111',$(arr));
+	//4.2伪数组
+	var arrLick={0:'aa',1:'bb',length:2};
+	console.log('4222',$(arrLick));
+
+	//5. 对象
+	//5.1 普通对象
+	var obj={name:'tom',age:18};
+	console.log('5111',$(obj));
+	//5.2 DOM对象
+	var dom=document.getElementById('box');
+	console.log('5222',$(dom));
+</script>
+</html>

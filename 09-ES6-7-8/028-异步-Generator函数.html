@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Generator函数</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function * gen(){
+		console.log('in gen....')
+		yield 
+		console.log('do something data1...')
+		yield 'data1'
+		console.log('do something data2...')
+		yield 'data2'
+		console.log('do something data3...')
+		yield 'data3'
+		console.log('do something data4...')
+		// return 'data4'
+		'data4'//如果该函数没有return语句，则返回的对象的value属性值为undefined
+		/*
+		console.log('do something data5...')
+		return 'data5'
+		*/
+
+	}
+	let g=gen();
+	//console.log(g)//调用 Generator 函数后，该函数并不执行,返回一个遍历器对象
+
+/*
+	let res=g.next();
+	console.log(res)//遇到yield表达式，就暂停执行后面的操作，并将紧跟在yield后面的那个表达式的值，作为返回的对象的value属性值
+*/
+
+//下一次调用next方法时，再继续往下执行，直到遇到下一个yield表达式
+//如果没有再遇到新的yield表达式，就一直运行到函数结束，直到return语句为止，并将return语句后面的表达式的值，作为返回的对象的value属性值
+
+	console.log(g.next());
+	console.log(g.next());
+	console.log(g.next());
+	console.log(g.next());
+	console.log(g.next());
+</script>
+</html>

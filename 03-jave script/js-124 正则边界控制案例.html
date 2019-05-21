@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js-124 正则边界控制案例</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<button id="btn">检查</button>
+</body>
+<script>
+	var oTxt=document.getElementById('txt')
+	var oBtn=document.getElementById('btn')
+	//邮箱验证
+	oBtn.onclick= function num(){
+		//2435435735@qq.com
+		//dlskfjiei@126.com
+		var reg=/\w+@[0-9a-z]+\.[a-z]{2,5}/
+		if(reg.test(oTxt.value)){
+			alert('合法')
+		}else{
+			alert('不合法')
+		}
+	}
+</script>
+</html>

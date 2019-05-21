@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery对象常见方法</title>
+<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 50px;
+			height: 50px;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<div class="div1"></div>
+	<div class="div2"></div>
+	<div class="div3"></div>
+	<div class="div4" data-kjshd="bbbb"></div>
+	<div class="div5"></div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+
+		//jQuery对象.index(),获取当前jQuery对象的索引
+		console.log($('div').index($('.div3')));
+		console.log($('div').index(document.querySelector('.div3')));
+
+
+
+		//jQuery对象.each(function(index,element){}),遍历jQuery对象中的DOM元素,注意回调函数中的this是DOM对象
+		$('div').each(function(index,element){
+			console.log(index,element,this)
+		});
+
+
+
+		//jQuery对象.data([key],[value])
+		$('.div2').data('test','aaaa');
+		//当参数为两个时,为该jQuery对象对应的DOM中存储key-value键值对的数据(添加属性和值)
+
+		console.log($('.div4').data('kjshd'));
+		console.log($('.div2').data('test'));
+		//当参数只有一个key的时候,为读取该jQuery对象对应DOM中存储的key对应的值(搜索属性对应登值)
+
+	})
+</script>
+</html>

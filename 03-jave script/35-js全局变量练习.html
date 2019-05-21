@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>35-js全局变量练习</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var a=1;
+	function fun(){
+		// var a
+		console.log('cc1',a);//unddfined
+		var a=2;
+		function fun1(){
+			console.log('cc2',a);//2
+		}
+		fun1();
+	}
+	
+	console.log('aa1',a);//1
+
+	fun();
+
+	console.log('aa2',a);//1
+</script>
+</html>

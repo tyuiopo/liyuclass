@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>85-js动画封装函数</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			margin-top: 20px;
+			background: #f76;
+			opacity: 0.4;
+		}
+	</style>
+</head>
+<body>
+	<div id="box1">变宽</div>
+	<div id="box2">变高</div>
+	<div id="box3">变色</div>
+</body>
+<script>
+	var oBox1=document.getElementById('box1');
+	var oBox2=document.getElementById('box2');
+	var oBox3=document.getElementById('box3');
+	function animate(obj,attr,target,isLinear,fnEnd){
+		if(isLinear==undefined){
+				isLinear=true;
+			}
+		clearInterval(obj.tmer);
+		var iSneep=0;
+		
+		obj.tmer=setInterval(function(){
+			var isStop=false;
+			var current=parseFloat(getComputedStyle(obj,false)[attr])
+
+			if(attr=='opacity'){
+				current=Math.round(current*100);
+			}
+			if(isLinear){
+				if(current<target){
+					iSneep=3;
+				}else{
+					iSneep=-3;
+				}
+				if(Math.abs(target-current)<Math.abs(iSneep)){
+					if(attr=='opacity'){
+						obj.style.opacity=target/100;
+					}else{
+						obj.style[attr]=target+'px';
+					}
+					isStop=true;
+				}
+			}else{
+				iSneep=(target-current)/10;
+				iSneep= iSneep<0?Math.floor(iSneep):Math.ceil(iSneep);
+				if(!iSneep){
+					isStop=true;
+				}
+			}
+			if(isStop){
+				clearInterval(obj.tmer);
+				if(typeof fnEnd=='function'){
+					fnEnd();
+				}
+			}else{
+				if(attr=='opacity'){
+					obj.style.opacity=(current+iSneep)/100;
+				}else{
+					obj.style[attr]=current+iSneep+'px'
+				}
+			}
+		},30)
+	}
+
+	oBox1.onmouseover=function(){
+		animate(oBox1,'width',400,false,function(){
+			animate(oBox1,'height',400,true,function(){
+				animate(oBox1,'opacity',100)
+			})
+		})
+	}
+	oBox1.onmouseout=function(){
+		animate(oBox1,'width',100,false,function(){
+			animate(oBox1,'height',100,true,function(){
+				animate(oBox1,'opacity',40)
+			})
+		})
+	}
+	oBox2.onmouseover=function(){
+		animate(oBox2,'height',400,true)
+	}
+	oBox3.onmouseover=function(){
+		animate(oBox3,'opacity',100)
+	}
+</script>
+</html>

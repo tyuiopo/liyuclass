@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Set对象的遍历方法</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+		keys():返回键名的遍历器
+		values():返回键值的遍历器
+		entries():返回键值对的遍历器
+		forEach(function(value,key){}):使用回调函数遍历
+
+		Set只有值没有键,所以key和value一样
+		Set的遍历顺序就是插入顺序
+	*/
+	let s=new Set([11,22,33,44,66,32,23])
+	console.log(s)
+
+	for(let key of s.keys()){
+		console.log('aa',key);
+	}
+
+	for(let val of s.values()){
+		console.log('bb',val);
+	}
+
+	for(let val of s){
+		console.log('cc',val);
+	}
+
+	for(let ent of s.entries()){
+		console.log('dd',ent);
+	}
+
+	s.forEach(function(val,index){
+		console.log('ee',val,index)
+	})
+</script>
+</html>

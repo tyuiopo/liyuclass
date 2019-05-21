@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>53-js点击克隆案例练习</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			position: relative;
+		}
+		.son{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" id="btn" value="克隆">
+	<div id="box">
+		<div class="son">你好！！</div>
+	</div>
+</body>
+<script>
+	var oBox=document.getElementById('box');
+	var oBtn=document.getElementById('btn');
+	var oSon=oBox.children;
+	var allCol=5;
+	var iWidth=100;
+	var iHeight=100;
+	var iMargin=20;
+	oBtn.onclick=function(){
+		var newSon=oSon[0].cloneNode(true);
+		oBox.appendChild(newSon);
+		for(var i=0;i<oSon.length;i++){
+			var iCol=i%allCol;
+			var iRom=parseInt(i/allCol);
+			oSon[i].style.left=iCol*(iWidth+iMargin)+'px';
+			oSon[i].style.top=iRom*(iHeight+iMargin)+'px';
+		}
+	}
+</script>
+</html>

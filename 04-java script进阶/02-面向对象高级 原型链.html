@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02-面向对象高级 原型链</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Preson(name,age){
+		this.name=name;
+		this.age=age;
+	}
+
+	var p1=new Preson('Tom',18);
+	// p1.test();
+
+	console.log(p1)
+	// console.log(p1.test());
+	console.log(p1.__proto__==Preson.prototype)
+	console.log(Preson.prototype.__proto__==Object.prototype)
+
+
+</script>
+</html>

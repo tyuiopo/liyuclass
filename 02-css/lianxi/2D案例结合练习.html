@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2D案例结合练习</title>
+	<style>
+		.box{
+			width: 700px;
+			height: 400px;
+			border:1px solid;
+			margin:100px auto;
+			perspective:500px;
+		}
+		.box img{
+			width: 100%;
+			height: 100%;
+			transform-origin:center bottom;
+			/*transform-origin:left center;*/
+			transition:1s linear; 
+		}
+		.box:hover img{
+			/*transform: rotateY(120deg);*/
+			transform:rotateX(90deg);
+		}
+	</style>
+</head>	
+<body>
+	<div class="box"><img src="../44.png" alt=""></div>
+</body>
+</html>

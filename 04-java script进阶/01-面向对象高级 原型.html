@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01-面向对象高级 原型</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Person(name,age){
+		this.name=name;
+		this.age=age;
+	}
+
+	console.log(Person.prototype.constructor)
+	console.log(Person.prototype.constructor==Person)
+	console.log(Person.prototype.__proto__)
+	console.log(Person.prototype.__proto__==Object.prototype)
+	console.log(Object.prototype.constructor==Object)
+	console.log(Object.prototype.__proto__)
+	
+
+/*
+	var p1=new Person('Tom',18)
+	console.log(p1)
+	*/
+</script>
+</html>

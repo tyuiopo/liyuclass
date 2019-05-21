@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>弹性布局-容器和项目</title>
+	<!-- 
+		把容器指定为弹性布局
+		块状元素 display: flex;
+		行内元素 display: inline-flex;
+	 -->
+	<!-- 
+		指定了弹性布局的元素称为Flex容器(flex container),它的所有子元素自动成为容器成员,称为 Flex项目(flex item)
+	-->
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father{
+			width:700px;
+			height: 500px;
+			border:10px solid #ff6700;
+			margin: 50px auto;
+			display: flex;
+		}
+		.son{
+			height: 50px;
+			line-height: 50px;
+		}
+		.son1{
+			width: 100px;
+			background: red;
+		}
+		.son2{
+			width: 200px;
+			background: blue;
+		}
+		.son3{
+			width: 300px;
+			background: gray;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son son1">div1</div>
+		<div class="son son2">div2</div>
+		<div class="son son3">div3</div>
+	</div>
+</body>
+</html>

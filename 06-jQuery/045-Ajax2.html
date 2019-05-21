@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ajax2</title>
+</head>
+<body>
+	<button>点击获取1</button>
+	<button>点击获取2</button>
+	<button>点击获取3</button>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	//接口封装
+	$(function(){
+		//$.get(url[,参数][,回调函数][,返回数据类型])//发送GET请求 
+		$('button').eq(0).on('click',function(){
+			$.get('044-data.json',{name:'Arry',age:22},function(data){
+				console.log(data)
+			},'josn');
+		});
+
+		//$.post(url[,参数][,回调函数][,返回数据类型]) //发送POST请求
+		$('button').eq(1).on('click',function(){
+			$.post('044-data.json',{name:'Tom',age:23},function(data){
+				console.log(data);
+			},'text');
+		});
+
+		//$.getJSON(url[,回调函数]) //获取JSON数据
+		$('button').eq(2).on('click',function(){
+			$.getJSON('044-data.json',function(data){
+				console.log(data)
+			});
+		});
+	})
+</script>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		<ul>
+			<!-- 数据传到子组件 -->
+			<todo-item
+				v-for="item in items"
+				:task="item.task"
+				:dateline="item.dateline"
+				:key="item.id"
+			></todo-item>
+		</ul>
+	</div>
+
+	 <template  id="todo-item">
+		<div>
+			<task :task="task"></task>
+			<dateline :dateline="dateline"></dateline>
+		</div>
+	</template>
+	
+	<!-- 子组件 -->
+	<template  id="task">
+		<span>{{msg}}{{task}}</span>
+	</template>
+	
+	<template  id="dateline">
+		<span>{{msg}}{{dateline}}</span>
+	</template>
+
+</body>
+<script src="vue/vue.js"></script>
+<script>
+	/*抽取子组件数据*/
+	const task =Vue.extend({
+		template:'#task',
+		// 接收数据
+		props:{
+			task:String
+		},
+		data(){
+			return {
+				msg:"任务:"
+			}
+		}
+	})
+	const dateline =Vue.extend({
+		template:'#dateline',
+		// 接收数据
+		props:{
+			dateline:String
+		},
+		data(){
+			return {
+				msg:"时间:"
+			}
+		}
+	})
+
+	Vue.component('todo-item',{
+		template:'#todo-item',
+		// 接收数据
+		props:{
+			task:String,
+			dateline:String
+		},
+		//建立子组件
+		components:{
+			task:task,
+			dateline:dateline
+		}
+	});
+	let vm = new Vue({
+		el:'#app',
+		data:{
+			items:[
+				{
+					id:1,
+					task:"学习react",
+					dateline:"今天中午"
+				},
+				{
+					id:2,
+					task:'学习Vue',
+					dateline:'明天'
+				}
+			]
+		},
+	});
+</script>
+</html>

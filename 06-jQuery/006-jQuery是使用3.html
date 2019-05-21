@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery是使用3</title>
+</head>
+<body>
+	
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	    //当页面DOM结构加载完毕后执行回调函数  
+	    //jQuery内部实现:window.jQuery = window.$ = jQuery; 
+	    //方法三中的$可以用jQuery代替
+    $(function(){
+      console.log('hello1')
+    });
+    $(function(){
+       console.log('world1')
+    }); 
+</script>
+</html>

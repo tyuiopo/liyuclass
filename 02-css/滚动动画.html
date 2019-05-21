@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>正面长方形</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			width: 300px;
+			height: 300px;
+			/*border:1px solid #000;*/
+			margin:100px auto;
+			list-style: none;
+			position: relative;
+			/*transform: rotateX(-18deg) rotateY(48deg);*/
+			transform-style: preserve-3d;
+			animation:tt 6s linear 0s infinite normal;
+		}
+		@keyframes tt{
+			from{
+				transform: rotateX(0deg);
+			}
+			to{
+				transform: rotateX(360deg);
+			}
+		}
+		ul:hover{
+			animation-play-state:paused;
+		}
+		ul:hover li{
+			opacity: 0.5;
+		}
+		ul li:hover{
+			opacity: 1;
+		}
+		li{
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			line-height: 300px;
+			position: absolute;
+			left:0;
+			top:0;
+			perspective: 500px;
+		}
+		li img{
+			width: 100%;
+			height: 100%;
+		}
+		li:nth-child(1){
+			background-color:red;
+			transform: rotateX(90deg) translateZ(150px)  scale(2,1);
+		}
+		li:nth-child(2){
+			background-color: blue;
+			transform: rotateX(-90deg) translateZ(150px) scale(2,1);
+		}
+		li:nth-child(3){
+			background-color: gray;	
+			transform:rotateX(-180deg)  translateZ(150PX) scale(2,1);
+		}
+		li:nth-child(4){
+			background-color: pink;
+			transform:translateZ(150PX) scale(2,1);
+		}
+		li:nth-child(5){
+			background-color:green;
+			transform:rotateY(90deg) translateZ(300PX);
+		}
+		li:nth-child(6){
+			background-color: yellow;
+			transform: rotateY(-90deg) translateZ(300PX);
+		}
+	</style>
+</head>
+<body>
+		<ul>
+		<li><img src="../111.jpg" alt=""></li>
+		<li><img src="../222.jpg" alt=""></li> 
+		<li><img src="../333.jpg" alt=""></li>
+		<li><img src="../444.jpg" alt=""></li>
+		<li>5</li>
+		<li>6</li>
+	</ul>
+</body>
+</html>

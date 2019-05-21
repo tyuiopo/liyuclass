@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件的委托</title>
+</head>
+<body>
+	<button>点击生成</button>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		/*
+		方法一:$('父元素选择器').delegate('子元素选择器','事件名', 回调函数)
+
+		$('ul').delegate('li','click',function(){
+			console.log(this);
+		})
+		*/
+		
+		//方式二:$('父元素选择器').on('事件名','子元素选择器', 回调函数)
+
+		$('ul').on('click','li',function(){
+			console.log(this)
+		})
+		$('button').on('click',function(){
+			var oLi=document.createElement('li');
+			oLi.innerHTML='创建1111';
+			$('ul')[0].appendChild(oLi);
+		})
+	})
+</script>
+</html>

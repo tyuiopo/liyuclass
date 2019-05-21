@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Promise对象的方法</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let p1=new Promise((resolve,reject)=>{
+		resolve('OK')
+	});
+	/*
+	let p2=p1.then(data1=>{
+		console.log(data1);
+		// return data1;//新的Promise的成功是执行函数的参数由上一个Promise的return决定
+	});
+	p2.then(data2=>{
+		console.log(data2)
+	})
+	console.log(p1);
+	console.log(p2);//then方法会返回一个新的Promise
+	console.log(p1==p2)
+	*/
+	let p4=null;
+	let p3=p1.then(data1=>{
+		console.log(data1);
+		p4= new Promise((resolve,reject)=>{
+			resolve('hello')
+		});
+		return p4;
+	});
+	//新的Promise的成功时执行函数的参数由上一个Promise的return决定
+	p3.then(data3=>{
+		console.log(data3);
+		console.log(p3==p4)
+	})
+	console.log(p3);
+	
+
+
+
+</script>
+</html>

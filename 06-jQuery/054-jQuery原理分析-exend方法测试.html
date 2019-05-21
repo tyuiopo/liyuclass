@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery原理分析-exend方法测试</title>
+</head>
+<body>
+	<div></div>
+</body>
+<script src="js/kquery-1.0.1.js"></script>
+<script>
+	$.fn.exend(({
+		test1:function(){
+			console.log('test1')
+		}
+	}))
+</script>
+<script>
+	$(function(){
+		$('div').test1();
+	})
+</script>
+</html>

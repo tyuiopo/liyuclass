@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery的静态方法-$.map(数组,回调)</title>
+</head>
+<body>
+	
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	//映射数组或者伪数组,返回映射后的数组
+	var arr1=[1,2,3,6,5,4]
+	var lickArr={1:'a',2:'b',3:'c',4:'d'}
+
+
+	var aa=$.map(arr1,function(value,index){
+		return index;
+	});
+	console.log(aa);
+
+
+	var bb=$.map(lickArr,function(value,index){
+		return index;
+	});
+	console.log(bb)
+
+
+	var cc=arr1.map(function(value,index){
+		return index;
+	});
+	console.log(cc);
+
+
+	var dd=lickArr.map(function(value,index){
+		return index;
+	});
+	console.log(dd);
+</script>
+</html>

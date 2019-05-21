@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>class类</title>
+</head>
+<body>
+	
+</body>
+<script>
+	class Person{
+		constructor(name,age){
+			this.name=name;
+			this.age=age;
+		}
+		sayName(){
+			console.log('I am '+this.name)
+		}
+		sayAge(){
+			console.log('I am '+this.age+'year old')
+		}
+		static sayHi(){
+			console.log('hi....')
+		}
+	}
+	let p=new Person('Tom',18);
+	Person.sayHi();
+	console.log(p)
+
+</script>
+</html>

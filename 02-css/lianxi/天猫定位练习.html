@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>天猫定位练习</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style: none;
+		}
+		header{
+			position:fixed;
+			left: 50%;
+			margin-left:-500px;
+			top:50px;
+			width: 1000px;
+			/*height: 50px;*/
+			background-color: grey;
+		}
+		.ab li{
+			float: left;
+			width: 200px;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+		}
+		a{
+			text-decoration:none;
+			font-size: 16px;
+			color:#000;
+		}
+		.ab li:nth-child(3){
+			background-color: red;
+			position: relative;
+		}
+		.ab li a img{
+			position:absolute;
+			left:84px;
+			top:-13px;
+		}
+		.carousel{
+			width: 1000px;
+			height: 500px;
+			padding:50px 100px;
+			background-color: pink;
+			margin-left: auto;
+			margin-right:auto;
+			margin-top: 120px;
+			position:relative;
+			box-sizing: border-box;
+		}
+		.carousel img{
+			text-align: center;
+			/*width: 800px;*/
+			/*height:500px;			*/
+		}
+		.left{
+			position: absolute;
+			top: 50%;
+			margin-top:-40px;
+			display:block;
+			width:40px;
+			height:80px;
+			background-color:gray;
+		}
+		.right{
+			position: absolute;
+			top: 50%;
+			right: 0;
+			margin-top:-40px;
+			display: block;
+			width: 40px;
+			height: 80px;
+			background-color: gray;
+		}
+		.bons{
+			position:absolute;
+			right: 0;
+			bottom: 0;
+			width:100px;
+			height: 20px;
+			line-height: 20px;
+		}
+		.bons li{
+			float: left;
+			text-align: center;
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			background-color:grey;
+		}
+		footer{
+			width: 1000px;
+			height: 1200px;
+			background-color:yellow;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 20px;
+		}
+		.box{
+			width: 80px;
+			height: 80px;
+			background-color:#ccc;
+			line-height: 80px;
+		}
+		.box a{
+			text-align: center;
+
+		}
+	</style>
+</head>
+<body>
+	<header class="">
+		<ul class="ab">
+			<li>
+				<a href="#">天猫会员</a>
+			</li>
+			<li>
+				<a href="#">品牌街</a>
+			</li>
+			<li>
+				<a href="#">电脑城 <img src="../top.jpg" alt=""></a>
+			</li>
+			<li>
+				<a href="#">营业厅</a>
+			</li>
+			<li>
+				<a href="#">魅力值</a>
+			</li>
+		</ul>
+	</header>
+	<section class="carousel">
+		<img  src="../tianmao.png" alt="">
+		<span class="left">&lt;</span>
+		<span class="right">&gt;</span>
+		<ul class="bons">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</section>
+	<footer class="content">
+		<div class="box">
+			<a href="#">回顶部</a>
+		</div>
+	</footer>
+</body>
+</html>

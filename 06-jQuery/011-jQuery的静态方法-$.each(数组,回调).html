@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery的静态方法-$.each(数组,回调)</title>
+</head>
+<body>
+	
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+
+
+	//遍历数组或者伪数组,返回被遍历的数组
+
+	var arr1=[1,3,5,2,6]
+	var list={1:'a',2:'b',3:'c'}
+
+
+
+	$.each(arr1,function(index,value){
+		console.log("1::",index,value)
+	});
+	$.each(list,function(index,value){
+		console.log("2::",index,value)
+	});
+
+
+
+	arr1.forEach(function(value,index){
+		console.log("3::",value,index)
+	});
+
+	list.forEach(function(value,index){
+		console.log("4::",value,index)
+	})
+
+
+</script>
+</html>

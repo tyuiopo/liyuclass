@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>18-js分支练习</title>
+</head>
+<body>
+	<input type="button" value="按钮1" id="btn1">
+	<input type="button" value="按钮2" id="btn2">
+	<div id="div1">fjkhdgjkhur</div>
+	<div id="div2">的客户给扶额</div>
+</body>
+<script>
+	var Obtn1=document.getElementById('btn1');
+	var Obtn2=document.getElementById('btn2');
+	var Odiv1=document.getElementById('div1');
+	var Odiv2=document.getElementById('div2');
+
+	Obtn1.onclick=function(){
+		// Odiv1.style.display='none';
+		if(Odiv1.style.display=='none'){
+			Odiv1.style.display='block';
+		}else{
+			Odiv1.style.display='none';
+		}
+	}
+	Obtn2.onclick=function(){
+		if(Odiv2.style.display=='none'){
+			Odiv2.style.display='block';
+		}else{
+			Odiv2.style.display='none';
+		}
+	}
+</script>
+</html>

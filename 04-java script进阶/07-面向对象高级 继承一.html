@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Person(name,age){
+		this.name=name;
+		this.age=age;
+	}
+	Person.prototype.showName=function(){
+		console.log('I am'+this.name);
+	}
+	Person.prototype.showAge=function(){
+		console.log('I am'+this.age+'yeara old');
+	}
+	Person.prototype.Legs=2;
+
+
+	function Student(name,age,major){
+		/*
+		this.name=name;
+		this.age=age;
+		*/
+		Person.call(this,name,age)//属性的继承
+		this.major=major;
+	}
+	Student.prototype=Person.prototype;
+	/*
+	Student.prototype.showName=function(){
+		console.log('I am'+this.name);
+	}
+	Student.prototype.showAge=function(){
+		console.log('I am'+this.age+'yeara old');
+	}
+	Student.prototype.Legs=2;
+	*/
+	Student.prototype.showMajor=function(){
+		console.log('I am'+this.major);
+	}
+	
+
+	var s1=new Student('Tom',18,'computer')
+	console.log(s1);
+</script>
+</html>

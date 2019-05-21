@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js-43数组去重</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr1=[1,2,3,4,2,6,8,4,9];
+	console.log(arr1);
+	function uniqueArray(arr){
+		var result=[];
+		for(var i=0;i<arr1.length;i++){
+			is=false;
+			for(var j=0;j<result.length;i++){
+				if(arr[i]==result[j]){
+					is=true;
+					break;
+				}
+			}
+		}if(!is){
+			result.push(arr[i]);
+		}
+		return result;
+	}
+
+	var arr2=uniqueArray[arr1];
+	console.log('qq',arr1);
+	console.log('tt',arr2);
+</script>
+</html>

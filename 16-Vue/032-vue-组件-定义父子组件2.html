@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		<ul>
+			<todo-item></todo-item>
+		</ul>
+	</div>
+
+	 <template  id="todo-item">
+		<div>
+			<task></task>
+			<dateline></dateline>
+		</div>
+	</template>
+	
+	<!-- 子组件 -->
+	<template  id="task">
+		<span>{{msg}}上午</span>
+	</template>
+	
+	<template  id="dateline">
+		<span>{{msg}}吃饭</span>
+	</template>
+
+</body>
+<script src="vue/vue.js"></script>
+<script>
+	/*抽取子组件数据*/
+	const task =Vue.extend({
+		template:'#task',
+		data(){
+			return {
+				msg:"时间:"
+			}
+		}
+	})
+	const dateline =Vue.extend({
+		template:'#dateline',
+		data(){
+			return {
+				msg:"任务:"
+			}
+		}
+	})
+
+	Vue.component('todo-item',{
+		template:'#todo-item',
+		//建立子组件
+		components:{
+			task:task,
+			dateline:dateline
+		}
+	});
+	let vm = new Vue({
+		el:'#app',
+		data:{
+			
+		},
+	});
+</script>
+</html>

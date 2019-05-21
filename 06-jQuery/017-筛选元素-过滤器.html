@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>筛选元素-过滤器</title>
+</head>
+<body>
+	<div class="div1"></div>
+	<div></div>
+	<div><p>你好！</p></div>
+	<div><span>肯定会尽快汇顶科技</span></div>
+	<div>会计数据和借款收到</div>
+	<div></div>
+	<div></div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	//基本过滤器
+	$(function(){
+		console.log($('div:eq(2)'));//选择索引对应的DOM元素,索引可以是负数
+	});
+	//内容过滤器
+	$(function(){
+		console.log($('div:empty'));//选择的元素中没有文本内容和子元素的
+		console.log($('div:parent'));//选择的元素中有文本内容或者子元素的
+		console.log($('div:contains(你好！)'));//选择的元素中包含有指定内容的
+		console.log($('div:has(span)'))//选择的元素中有指定的选择器的
+	});
+	//过滤方法
+	$(function(){
+		console.log($('div').eq(2));//选择索引对应的DOM元素
+		console.log($('.div1').siblings())//jQuery对象中包含元素之外的兄弟元素
+	})
+</script>
+</html>

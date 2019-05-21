@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数-函数参数</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	function sum(name,age){
+		name=name || 'Tom';
+		age=age || 18;
+		console.log(name,age)
+	}
+	sum('Arry',28)
+	*/
+
+	/*
+	function sum(name='Tom',age=18){
+		console.log(name,age)
+	}
+	sum();
+	sum('Arry',28)
+	*/
+
+	/*
+	function sum(name,age=18){
+		console.log(name,age)
+	}
+	sum();
+	*/
+
+	/*
+	function sum(age=18,name){
+		console.log(name,age)
+	}
+	sum();
+	sum('Arry',28)
+	*/
+
+
+/*
+	//参数默认值不是传值的,而是每次都重新计算默认值表达式的值
+	var x=100;
+	function num(i=10+x){
+		console.log(i)
+	}
+	num();
+
+	x=200;
+	num();
+*/
+
+	//结构解析和默认参数结合
+	function show(url,{mode="GET",body="hello"}={}){
+		console.log(url,mode,body)
+	}
+	show();
+
+
+</script>
+</html>

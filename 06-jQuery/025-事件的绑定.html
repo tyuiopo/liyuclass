@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件的绑定</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 200px;
+			height: 30px;
+			border: 1px solid;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	//方法一
+	$(function(){
+		$('div').click(function(){
+			alert('aa')
+		})
+	})
+	//方法二 绑定一个可以多次执行的事件处理函数
+	$(function(){
+		$('div').on('click',function(){
+			alert('bb');
+		})
+	})
+	//方法三 绑定一个一次性的事件处理函数
+	$(function(){
+		$('div').one('click',function(){
+			alert('cc');
+		})
+	})
+
+	/*
+		方法一部分事件jQuery没有实现,方法二中可以写js中所有的事件
+		无论是方法一还是方法二,绑定的事件都会不会覆盖
+	*/
+</script>
+</html>

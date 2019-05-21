@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片过度练习</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+
+		
+		ul{
+			width: 1200px;
+			height:400px;
+			margin: 100px auto;
+			border:1px solid;
+			overflow: hidden;
+		}		
+		li{
+			float:left;
+			list-style: none;
+			width:200px;
+			height:400px;
+			background-color: pink;
+			transition:width 0.5s linear;
+		}
+		li img{
+			width: 600px;
+			height: 100%;
+		}
+		ul:hover li{
+			width: 150px;
+		}
+		ul li:hover{
+			width: 600px;
+		}
+
+	</style>
+</head>
+<body>
+	<ul>
+		<li>
+			<img src="../7.jpg" alt="">
+		</li>
+		<li>
+			<img src="../6.jpg" alt="">
+		</li>
+		<li>
+			<img src="../5.jpg" alt="">
+		</li>
+		<li>
+			<img src="../3.jpg" alt="">
+		</li>
+		<li>
+			<img src="../4.jpg" alt="">
+		</li>
+	</ul>
+</body>
+</html>

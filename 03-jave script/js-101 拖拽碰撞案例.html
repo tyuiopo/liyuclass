@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js101-拖拽碰撞案例</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box1{
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			left: 0;
+			top:0;
+			background: #ccc;
+		}
+		#box2{
+			width: 200px;
+			height: 200px;
+			background: purple;
+			position: absolute;
+			left: 600px;
+			top:200px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box1"></div>
+	<div id="box2"></div>
+</body>
+<script>
+	var oBox1=document.getElementById('box1')
+	var oBox2=document.getElementById('box2')
+	var isdisX=0,isdisY=0;
+	oBox1.onmousedown=function(ev){
+		isdisX=ev.clientX-oBox1.offsetLeft;
+		isdisY=ev.clientY-oBox1.offsetTop;
+		document.onmousemove=function(ev){
+			oBox1.style.left=ev.clientX-isdisX+'px';
+			oBox1.style.top=ev.clientY-isdisY+'px';
+
+			if(oBox1.offsetLeft+oBox1.offsetWidth>oBox2.offsetLeft&&
+				oBox1.offsetTop+oBox1.offsetHeight>oBox2.offsetTop&&
+				oBox1.offsetLeft<oBox2.offsetLeft+oBox2.offsetWidth&&
+				oBox1.offsetTop<oBox2.offsetTop+oBox2.offsetHeight){
+				oBox2.style.backgroundColor='#ff6700';
+				}else{
+				oBox2.style.backgroundColor='purple';
+			}
+		}
+		document.onmouseup=function(){
+			document.onmousemove=null;
+			document.onmouseup=null;
+		}
+	}
+
+
+</script>
+</html>

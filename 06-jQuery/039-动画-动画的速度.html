@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画-动画的速度</title>
+<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height:50px;
+			background-color: red;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn1">点击动画</button>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	//以上动画在回调前面可以指定速度,默认是'swing',可用参数"linear"
+	$(function(){
+		$('#btn1').on('click',function(){
+
+			$('div').eq(0).animate({width:400},1000,function(){
+				console.log('width..1')
+			});
+
+			$('div').eq(1).animate({width:400},1000,'swing',function(){
+				console.log('width..2')
+			});
+
+			$('div').eq(2).animate({width:400},1000,'linear',function(){
+				console.log('width..3')
+			});
+			
+		});
+	});
+</script>
+</html>

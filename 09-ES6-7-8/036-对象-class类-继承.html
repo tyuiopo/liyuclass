@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>继承</title>
+</head>
+<body>
+	
+</body>
+<script>
+	class Person{
+		constructor(name,age){
+			this.name=name;
+			this.age=age;
+		}
+		sayName(){
+			console.log('I am '+this.name)
+		}
+		sayAge(){
+			console.log('I am '+this.age+'year old')
+		}
+		static sayHi(){
+			console.log('hi....')
+		}
+	}
+	let p=new Person('Tom',18);
+	Person.sayHi();
+	console.log(p)
+
+	class Student extends Person{
+		constructor(name,age,majer){
+			super(name,age);//子类必须在constructor方法中调用super方法,该super方法实际上是调用父类的constructor
+			this.majer=majer
+		}
+		sayMajer(){
+			console.log('I lick'+majer)
+		}
+	}
+	// console.log(Student)
+	let s=new Student('leo',28,'computer')
+	console.log(s)
+
+
+
+</script>
+</html>

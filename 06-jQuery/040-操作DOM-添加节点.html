@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>操作DOM-添加节点</title>
+</head>
+<body>
+	<button>插入1</button>
+	<button>插入2</button>
+	<button>插入3</button>
+	<button>插入4</button>
+	<button>插入5</button>
+	<button>插入6</button>
+	<ul>
+		<li>li1</li>
+		<li>li2</li>
+		<li>li3</li>
+		<li>li4</li>
+	</ul>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		//内部插入
+		//将子节点插入到父节点内部后面
+		$('button').eq(0).on('click',function(){
+			var $Li=$('<li>我是插入的</li>');
+			$('ul').append($Li);
+			//父节点jQuery对象.append(子节点jQuery对象)
+		});
+		$('button').eq(1).on('click',function(){
+			var $Li=$('<li>我是插入的</li>');
+			($Li).appendTo($('ul'));
+			//子节点jQuery对象.appendTo(父节点jQuery对象)
+		});
+
+		//将子节点插入到父节点内部前面
+		$('button').eq(2).on('click',function(){
+			var $Li=$('<li>我是插入的</li>');
+			$('ul').prepend($Li);
+			//父节点jQuery对象.prepend(子节点jQuery对象)
+		});
+		$('button').eq(3).on('click',function(){
+			var $Li=$('<li>我是插入的</li>');
+			($Li).prependTo($('ul'));
+			//子节点jQuery对象.prependTo(父节点jQuery对象)
+		});
+
+
+
+		//外部插入
+		$('button').eq(4).on('click',function(){
+			var $P=$('<p>我是插入外部的</p>');
+			$('ul').after($P)
+			//jQuery对象1.after(jQuery对象2) jQuery对象1中的节点后面插入jQuery对象2中的节点
+		});
+
+		$('button').eq(5).on('click',function(){
+			var $P=$('<p>我是插入外部的</p>');
+			$('ul').before($P)
+			//jQuery对象1.before(jQuery对象2) jQuery对象1中的节点前面插入jQuery对象2中的节点
+		});
+	})
+</script>
+</html>

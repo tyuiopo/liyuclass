@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>操作尺寸</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box1{
+			width: 100px;
+			height: 100px;
+			border: 10px solid #ff6700;
+			background-color: red;
+			margin-bottom: 20px;
+		}
+		.box2{
+			width: 150px;
+			height: 150px;
+			border:20px solid purple;
+			padding: 20px;
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+	<div class="box2"></div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		//设置或获取元素的宽高
+		/*
+		console.log($('div').width());//获取
+		console.log($('div').width(200));//设置
+		console.log($('div').height());//获取
+		console.log($('div').height(200));//设置
+		*/
+
+		//设置或获取元素的宽高,包含内边距
+		/*
+		console.log($('div').innerWidth());//获取
+		console.log($('div').innerWidth(200));//设置
+		console.log($('div').innerHeight());//获取
+		console.log($('div').innerHeight(200));//设置
+		*/
+		
+		//设置或获取元素的宽高,包含边框和内边距
+		console.log($('div').outerWidth());//获取
+		console.log($('div').outerWidth(230));//设置
+		console.log($('div').outerHeight());//获取
+		console.log($('div').outerHeight(200));//设置
+	})
+</script>
+</html>

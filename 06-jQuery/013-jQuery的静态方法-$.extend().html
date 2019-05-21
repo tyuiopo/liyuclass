@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery的静态方法-$.extend()</title>
+</head>
+<body>
+	
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	var obj1={name:'Tom',age:'18'};
+	var obj2={name:'Arry'};
+
+	var obj3={name:'Jack',age:'28'};
+	var obj4={name:'Maik'};
+
+
+	//合并 obj1 和 obj2,修改并返回 obj1
+	var obj5=$.extend(obj1,obj2);
+	console.log(obj5)
+	console.log(obj1==obj5);
+
+
+	//合并 obj1 和 obj2,返回合并后的对象,不修改obj1。
+	var obj6=$.extend({},obj3,obj4)
+	console.log(obj6);
+	console.log(obj3);
+</script>
+</html>

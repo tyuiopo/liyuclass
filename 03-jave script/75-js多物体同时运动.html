@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>75-js多物体同时运动</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			margin-top: 10px;
+			background: #f67;
+			opacity: 0.4;
+		}
+	</style>
+</head>
+<body>
+	<div id="box1">变宽</div>
+	<div id="box2">标高</div>
+	<div id="box3">变色</div>
+</body>
+<script>
+	var oBox1=document.getElementById('box1');
+	var oBox2=document.getElementById('box2');
+	var oBox3=document.getElementById('box3');
+	var tmer=0;
+	oBox1.onmouseover=function(){
+		clearInterval(oBox1.tmer);
+		var iSneep=0;
+		oBox1.tmer=setInterval(function(){
+			if(oBox1.offsetWidth<500){
+				iSneep=5;
+			}else{
+				iSneep=-5;
+			}
+			if(Math.abs(500-oBox1.offsetWidth)<Math.abs(iSneep)){
+				oBox1.style.width='500px';
+				clearInterval(oBox1.tmer);
+			}else{
+				oBox1.style.width=oBox1.offsetWidth+iSneep+'px';
+			}
+		},30)
+	}
+	oBox2.onmouseover=function(){
+		clearInterval(oBox2.tmer);
+		var iSneep=0;
+		oBox2.tmer=setInterval(function(){
+			if(oBox2.offsetHeight<400){
+				iSneep=5;
+			}else{
+				iSneep=-5;
+			}
+			if(Math.abs(400-oBox2.offsetHeight)<Math.abs(iSneep)){
+				oBox2.style.height='400px';
+				clearInterval(oBox2.tmer);
+			}else{
+				oBox2.style.height=oBox2.offsetHeight+iSneep+'px';
+			}
+		},30)
+	}
+	oBox3.onmouseover=function(){
+		clearInterval(oBox3.tmer);
+		var iSneep=0;
+		oBox3.tmer=setInterval(function(){
+			var cennt=parseFloat(getComputedStyle(oBox3,false)['opacity']);
+			cennt=Math.round(cennt*100);
+			if(cennt<100){
+				iSneep=3;
+			}else{
+				iSneep=-3;
+			}         
+			if(Math.abs(100-cennt)<Math.abs(iSneep)){
+				oBox3.style.opacity='1';
+				clearInterval(oBox3.tmer);
+			}else{
+				oBox3.style.opacity=(cennt+iSneep)/100;
+			}
+		},30)
+	}
+</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js-109 点击删除案例</title>
+</head>
+<body>
+	<ul id="ul">
+		<li>li1 <a href="javascript:;" class="del">删除</a></li>
+		<li>li2 <a href="javascript:;" class="del">删除</a></li>
+		<li>li3 <a href="javascript:;" class="del">删除</a></li>
+		<li>li4 <a href="javascript:;" class="del">删除</a></li>
+		<li>li5 <a href="javascript:;" class="del">删除</a></li>
+		<li>li6 <a href="javascript:;" class="del">删除</a></li>
+		<li>li7 <a href="javascript:;" class="del">删除</a></li>
+		<li>li8 <a href="javascript:;" class="del">删除</a></li>
+		<li>li9 <a href="javascript:;" class="del">删除</a></li>
+	</ul>
+</body>
+<script>
+	var oUl=document.getElementById('ul')
+	oUl.addEventListener('click',function(ev){
+		if(ev.target.className='del'){
+			oUl.removeChild(ev.target.parentNode);
+		}
+		// console.log(ev.target)
+		
+	},false)
+</script>
+</html>

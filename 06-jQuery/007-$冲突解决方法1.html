@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>07-$冲突解决方法1</title>
+</head>
+<body>
+	
+</body>
+<script>
+	(function(window){
+		window.$=function(){
+			console.log('gjhjgjhgjh')
+		}
+	})(window)
+	// $();
+</script>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	//在使用jQuery前释放jQuery的$使用权,用jQuery来代替$
+	jQuery.noConflict();
+	$();
+	jQuery(function(){
+		console.log('jshjkhsd22222')
+	})
+</script>
+</html>

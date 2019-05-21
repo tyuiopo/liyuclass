@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>108-js 输入数字案例</title>
+</head>
+<body>
+	<p>请输入手机号</p>
+	<input type="text" id="txt">
+	<input type="submit" id="sub">
+</body>
+<script>
+	var oTxt=document.getElementById('txt');
+	var oSub=document.getElementById('sub');
+
+	oTxt.onkeydown=function(ev){
+		// console.log(ev.keyCode)
+		if((ev.keyCode<96||ev.keyCode>105)&&ev.keyCode!=8&&ev.keyCode!=37&&ev.keyCode!=39){
+			return false;
+		}
+	}
+</script>
+</html>

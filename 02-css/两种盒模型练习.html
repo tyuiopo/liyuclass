@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>两种盒模型练习</title>
+	<style>
+		.son1{
+			width: 200px;
+			height: 200px;
+			background: blue;
+			border:5px solid red;
+			padding:5px;
+			margin:70px;
+		}
+		.son2{
+			width: 200px;
+			height: 200px;
+			background: pink;
+			border:5px solid yellow;
+			padding:5px;
+			margin:60px;
+		}
+		.son1{
+			box-sizing:content-box;
+		}
+		.son2{
+			box-sizing:border-box;
+		}
+	</style>
+</head>
+<body>
+	<div class="son1"></div>
+	<div class="son2"></div>
+</body>
+</html>

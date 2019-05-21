@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画-延时动画</title>
+<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 200px;
+			background-color: red;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn1">点击动画</button>
+	<div></div>
+	<div></div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('#btn1').on('click',function(){
+			//延迟动画只对后面的动画起作用
+			$('div').animate({width:200},1000,function(){
+				console.log('width..')
+			}).delay(1000);
+			$('div').animate({height:100},1000,function(){
+				console.log('height..')
+			});
+			$('div').animate({opacity:0.5},1000,function(){
+				console.log('opacity..')
+			});
+			
+		});
+	});
+</script>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>87-js动画应用</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 400px;
+			height: 400px;
+			margin: 100px auto;
+		}
+		ul{
+			list-style: none;
+		}
+		li{
+			width: 200px;
+			height: 30px;
+			line-height: 30px;
+			font-size: 15px;
+			color: #ff6700;
+			padding-left: 10px;
+			border-bottom: 1px dashed #ccc;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<input type="text" id="txt">
+		<input type="button" value="发布" id="btn">
+		<ul id="ul">
+			<li>哈哈哈</li>
+		</ul>
+	</div>
+</body>
+<script src="js/封装函数进阶版.js"></script>
+<script>
+	var oTxt=document.getElementById('txt')
+	var oBtn=document.getElementById('btn')
+	var oUl=document.getElementById('ul')
+	oBtn.onclick=function(){
+		var val=oTxt.value;
+		var oLi=document.createElement('li');
+		oLi.innerHTML=val;
+		oUl.insertBefore(oLi,oUl.firstChild);
+		oTxt.value='';
+
+		oLi.style.height=0;
+		oLi.opacity=0;
+		animate(oLi,{height:30,opacity:100},false)
+	}
+</script>
+</html>

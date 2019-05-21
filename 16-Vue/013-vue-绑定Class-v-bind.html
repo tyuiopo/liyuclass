@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.active{
+			background: yellow;
+		}
+		.error{
+			color:blue;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<!-- 对象语法 -->
+		<p>对象语法</p>
+
+		<p class="active error">class="active error"</p>
+
+		<p v-bind:class="{active:true,error:true}">v-bind:class="{active:true,error:true}</p>
+
+		<p :class="{active:true,error:true}">:class="{active:true,error:true}</p>
+
+		<p :class="{active:isActive,error:true}">:class="{active:isActive,error:true}</p>
+
+		<p :class="{active:isActive,error:isError}">:class="{active:isActive,error:isError}</p>
+
+		<!-- 数组语法 -->
+		<p>数组语法</p>
+
+		<p :class="['active','error']">:class="['active','error']"</p>
+
+		<p :class="[isActive ? 'active' : '','error']">:class="[isActive ? 'active' : '','error']"</p>
+
+		<p :class="classObj">:class="classObj"</p>
+
+		
+		<p :class="classArr">:class="classArr"</p>
+	</div>
+</body>
+<script src="vue/vue.js"></script>
+<script>
+	let vm = new Vue({
+		el:'#app',
+		data:{
+			isActive:false,
+			isError:false,
+			classObj:{
+				active:true,
+				error:false
+			},
+			classArr:[
+				'active',
+				'error'
+			]
+		},
+	});
+</script>
+</html>

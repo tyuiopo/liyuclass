@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04-jQuery是使用1.</title>
+</head>
+<body>
+	
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	    //当页面DOM结构加载完毕后执行回调函数   
+	    //jQuery内部实现:window.jQuery = window.$ = jQuery;
+    jQuery(document).ready(function(){
+      	console.log('hello')
+    });
+    jQuery(document).ready(function(){
+       console.log('world')
+    });
+    window.onload=function(){
+    	console.log('hello1')
+    };
+    window.onload=function(){
+    	console.log('world1')
+    }
+</script>
+</html>

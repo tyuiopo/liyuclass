@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>20-数组的高级应用</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var str=[0,1,2,3,5,7,10,20,3,5,0]
+	var str1=[];
+
+	str.forEach(function(value,index){
+		if(value==0){
+			return
+		}else{
+			str1[value].push(str[value]);
+		}
+		console.log(str1)
+	})
+
+/*
+	var str2=str.map(function(value,index){
+		
+	})
+*/
+</script>
+</html>

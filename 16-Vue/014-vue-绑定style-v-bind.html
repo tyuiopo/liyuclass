@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		<p>对象语法</p>
+
+		<p style="background:#ccc;color: red">style="background:#ccc;color: red"</p>
+
+		<p :style="{backgroundColor:'#ccc',color:'red'}">:style="{backgroundColor:'#ccc',color:'red'}"</p>
+
+		<p :style="{backgroundColor:bg,color:color}">:style="{backgroundColor:bg,color:color}"</p>
+
+		<p :style="styleObj">:style="styleObj"</p>
+
+		<p>数组语法</p>
+		
+		<p :style="[styleObj,styleObj2]">:style="[styleObj,styleObj2]"</p>
+		
+		<p :style="styleArr">:style="styleArr"</p>
+	</div>
+</body>
+<script src="vue/vue.js"></script>
+<script>
+	let vm = new Vue({
+		el:'#app',
+		data:{
+			bg:'#ccc',
+			color:'red',
+			styleObj:{
+				backgroundColor:'#ccc',
+				color:'red'
+			},
+			styleObj2:{
+				fontSize:'20px'
+			},
+			styleArr:[
+				{
+					backgroundColor:'#ccc',
+					color:'red'	
+				},
+				{
+					fontSize:'20px'
+				}
+			]
+		}
+	});
+</script>
+</html>

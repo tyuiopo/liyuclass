@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js-110 面向对象 去重案例</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr=[11,22,33,44,55,66,44,88]
+
+	function num (arr){
+		var result=[];
+		var obj={};
+
+		for(var i=0;i<arr.length;i++){
+			obj[arr[i]]='';
+		}
+		for(var attr in obj){
+			result.push(attr);
+		}
+
+		return result;
+	}
+
+	console.log(num(arr));
+</script>
+</html>

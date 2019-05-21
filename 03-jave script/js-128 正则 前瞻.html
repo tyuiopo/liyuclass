@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js-128 正则 前瞻</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var str='a1bfji2c3e4rp&5#'
+
+
+	//正向前瞻
+	var reg=/[a-z](?=\d)/
+	var reg2=/[a-z](?=\d)/g
+
+	//负向前瞻
+	var reg3=/[a-z](?!\d)/
+	var reg4=/[a-z](?!\d)/g
+
+
+	console.log(str.replace(reg,'*'))
+	console.log(str.replace(reg2,'*'))
+
+
+
+	console.log(str.replace(reg3,'*'))
+	console.log(str.replace(reg4,'*'))
+</script>
+</html>

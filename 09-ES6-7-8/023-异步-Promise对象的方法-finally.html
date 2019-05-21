@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>finally</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//不管Promise对象最后状态如何,都会执行的操作
+	//finally方法的回调函数不接受任何参数 
+	let p1=new Promise((resolve,reject)=>{
+		// resolve('OK');
+		reject('失败')
+	});
+	p1.then(data=>{
+		console.log('success',data)
+	},err=>{
+		console.log('falided',err)
+	})
+	.finally(()=>{
+		console.log('finally....')
+	})
+</script>
+</html>

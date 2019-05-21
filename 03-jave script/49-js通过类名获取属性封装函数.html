@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>通过类名获取属性封装函数</title>
+</head>
+<body>
+	<ul id="ul">
+		<li class="box"></li>
+		<li></li>
+		<li class="box"></li>
+		<li></li>
+		<li class="box"></li>
+		<li></li>
+	</ul>
+
+	<div id="div">
+		<div class="box"></div>
+		<div></div>
+		<div class="box"></div>
+		<div></div>
+	</div>
+</body>
+<script>
+	function getElementClass(oParent,sClass){
+		var Ele=oParent.children;
+		var result=[];
+		for(var i=0;i<Ele.length;i++){
+			if(Ele[i].className==sClass){
+				result.push(Ele[i]);
+			}
+		}
+		return result;
+	}
+
+
+	var oUl=document.getElementById('ul');
+	var oDiv=document.getElementById('div');
+
+	var oBox1=getElementClass(oUl,'box');
+	var oBox2=getElementClass(oDiv,'box');
+
+	console.log(oBox1);
+	console.log(oBox2);
+</script>
+</html>

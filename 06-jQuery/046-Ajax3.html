@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ajax3</title>
+</head>
+<body>
+	<button>点击获取</button>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('button').on('click',function(){
+			var jqXHR=$.ajax({
+				url:'044-data.json',
+			});
+
+
+			//jqXHR对象 .done(回调函数) 请求成功时执行,回调函数的参数依次为 返回数据,状态信息,jqXHR对象
+			jqXHR.done(function(data,Msg,jqHTL){
+				console.log(data);
+				console.log(Msg);
+				console.log(jqHTL);
+			});
+
+
+			//jqXHR对象 .fail(回调函数) 请求失败时执行,回调函数的参数依次为 jqXHR对象,状态信息
+			jqXHR.fail(function(jqHTL,Msg){
+				console.log(jqHTL);
+				console.log(Msg);
+			});
+
+
+			// jqXHR.abort()//终止请求
+
+
+			//jqXHR对象 .always(回调函数) 无论成功还是失败都执行,如果成功,回调函数的参数和done的一样,如果失败，回调函数的参数和fail的一样
+			jqXHR.always(function(jqHTL,Msg){
+				console.log(jqHTL);
+				console.log(Msg);
+			});
+
+		})
+	})
+</script>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Promise对象的方法</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	//普通 异步请求图片
+	function loadImg(url,success,error){
+		var img=new Image();
+		img.onload=function(){
+			success(url);
+		}
+		img.onfalid=function(){
+			error(url);
+		}
+		img.src=url;
+	}
+	loadImg('../03-jave script/Numimg/33.jpg',
+		function(url){
+			console.log(url+'success')
+		},
+		function(url){
+			console.log(url+'error')
+		})
+	*/
+	/*
+	// Promise 处理异步请求图片
+	let promise=new Promise((resolve,reject)=>{
+		var img=new Image();
+		img.onload=function(){
+			console.log('./03-jave script/Numimg/33.jpg')
+		}
+		img.onfalid=function(){
+			error('./03-jave script/Numimg/33.jpg......')
+		}
+		img.src='../03-jave script/Numimg/33.jpg'
+	})
+	*/
+
+	//Promise的实例 处理异步请求图片
+	let getImgPromise=(url)=>{
+		return new Promise((resolve,reject)=>{
+			var img=new Image();
+			img.onload=function(){
+				resolve(url)
+			}
+			img.onfalid=function(){
+				reject(url)
+			}
+				img.src=url
+			})
+	}
+	getImgPromise('../03-jave script/Numimg/33.jpg')
+	.then(data=>{
+		console.log(data+'load..')
+	},data=>{
+		console.log(data+'falied...')
+	})
+
+</script>
+</html>

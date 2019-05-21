@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组的扩展运算</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//数组的扩展运算就是将一个数组转为用逗号分隔的参数序列
+	var attr=[11,22];
+
+/*
+	//函数调用时使用把数组转换为参数列表
+	function sum(n1,n2){
+		return n1-n2
+	}
+	console.log(sum(...attr))
+*/
+
+
+	//函数定义时使用把参数列表转换为数组
+	function add(...arr){
+		let result = 0;
+		for(let i = 0;i<arr.length;i++){
+		    result += arr[i]
+		}
+		return result;
+	}
+	console.log(add(11,22));
+
+
+
+</script>
+</html>

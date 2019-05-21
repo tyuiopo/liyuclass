@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>05-ajax建立</title>
+</head>
+<body>
+	<button id="btn">发送POST请求</button>
+</body>
+<script>
+
+	//POST请求
+	var oBtn=document.getElementById('btn');
+
+	oBtn.onclick=function(){
+		//生成ajax对象(购买电话)
+		var oAjax=new XMLHttpRequest();
+		// console.log(oAjax);
+		//建立连接(拨号)
+		oAjax.open('POST','http://127.0.0.1:3000/06-data.json',true);
+		//建立请求头(可选)
+		oAjax.setRequestHeader('Content-Type','application/x-www-form-urlencoded')
+		//发送信息(说话)
+		oAjax.send('{"name":"tom","age":18}');
+		//监听事件接收数据(听)
+		oAjax.onreadystatechange=function(){
+			// console.log(oAjax.readyState);
+			if(oAjax.readyState==4){//数据完全返回
+				if(oAjax.status==200){//请求成功
+					try{
+						var obj = JSON.parse(oAjax.responseText);
+						console.log(obj.name);
+					}catch(e){
+						console.log(e);
+					}
+				}else{
+					console.log('failed request status code = '+oAjax.status)
+				}
+			}
+		}
+	}
+</script>
+</html>

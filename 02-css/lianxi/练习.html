@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>练习</title>
+	<style>
+		textarea{
+			resize: none;
+		}
+		[type="text"]:focus{
+				outline-color: red;
+		}
+		/*[type="checkbox"]:checked{
+				height:100px;
+		}*/
+		[class="hao"]{
+			color: pink;
+			font-size: 30px;
+		}
+		[class="mi"]{
+			color: blue;
+			font-size: 30px;
+		}
+	</style>
+</head>
+<body>
+	<form action="http://www.kuazhu.com">
+	<h1>用户登录</h1>
+	<p>
+		<label for="zh" class="hao">账号：</label>
+		<input type="text" name="zhanghao"  id="zh">
+	</p>
+	<p>
+		<label for="mm" class="mi">密码：</label>
+		<input type="possword" name="mima" id="mm">
+	</p>
+	<p>
+		性别：
+			<input type="radio" name="sex" value="boy" checked>男
+			<input type="radio" name="sex" value="girl">女
+			<input type="radio" name="sex" value="secrecy">保密
+	</p>
+	<p>
+		爱好：
+			<input type="checkbox" name="hoppy" value="baskedball" checked>篮球
+			<input type="checkbox" name="hoppy" value="football">足球
+			<input type="checkbox" name="hoppy" value="badminton">羽毛球
+			<input type="checkbox" name="hoppy" value="other">其他
+	</p>
+	<p>
+		<label for="head">我的头像：</label>
+		<input type="file" id="head">
+	</p>
+	<p>
+		<label for="email">我的邮箱：</label>
+		<input type="email" id="email">
+	</p>
+	<p>
+		<label for="number">我的电话号码：</labe>
+		<input type="number" id="number">
+	</p>
+	<p>
+		<label for="color">我喜欢的颜色：</label>
+		<input type="color" id="color">
+	</p>
+	<p>
+		<label for="date">我的生日：</label>
+		<input type="date" id="date">
+	</p>
+	<p>
+		所在城市：
+		<select name="city" id="">
+			<optgroup label="直辖市">
+				<option value="bj">北京</option>
+				<option value="sh">上海</option>
+				<option value="tj">天津</option>
+			</optgroup>
+			<optgroup label="省会">
+				<option value="zz">郑州</option>
+				<option value="xa">西安</option>
+				<option value="gz">广州</option>
+			</optgroup>
+		</select>
+	</p>
+	<p>
+		自我介绍：
+		<textarea name="oneself" id="zz" cols="60" rows="20">
+		</textarea>
+	</p>
+	<p>
+		<input type="hidden" name="偷偷的" value="tt">
+		<input type="button" value="按钮">
+		<input type="reset" value="重置">
+		<input type="submit" value="提交">
+	</p>
+</form>
+</body>
+</html>

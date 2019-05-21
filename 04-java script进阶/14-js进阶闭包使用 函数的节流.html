@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js进阶闭包使用 函数的节流</title>
+	<style>
+		body{
+			width: 3000px;
+			height: 3000px;
+		}
+	</style>
+</head>
+<body>
+	
+</body>
+<script>
+	var i=0;
+	function Go(fn,wait){
+		var lastTime=Date.now();
+		return function(){
+			var currentime=Date.now();
+			if(currentime-lastTime>wait){
+				fn();
+				lastTime=Date.now();
+			}
+		}
+	}
+
+	window.onscroll=Go(function(){
+		console.log(i++);
+	},500)
+</script>
+</html>

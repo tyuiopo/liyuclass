@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js-106表单事件</title>
+</head>
+<body>
+	<form action="http://www.kuazhu.com/" id="form">
+		<input type="text" id="txt">
+		<input type="submit" id="sub">
+		<input type="reset" id="res">
+		<p id="p"></p>
+	</form>
+</body>
+<script>
+	var oFor=document.getElementById('form')
+	var oTxt=document.getElementById('txt')
+	var oSub=document.getElementById('sub')
+	var oRes=document.getElementById('res')
+	var oP=document.getElementById('p')
+
+	oTxt.onfocus=function(){
+		oP.style.color='green'
+		oP.innerHTML='请输入3-6为用户名';
+	}
+	oTxt.onblur=function(){
+		var len=oTxt.value.length
+		if(len<3||len>6){
+			oP.style.color='red'
+			oP.innerHTML='用户名输入错误';
+		}else{
+			oP.style.color='green'
+			oP.innerHTML='用户名正确';
+		}
+	}
+	
+</script>
+</html>

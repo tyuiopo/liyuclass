@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画-卷入/卷出和切换</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<button>显示</button>
+	<button>隐藏</button>
+	<button>切换</button>
+	<div></div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('button').eq(0).on('click',function(){
+			$('div').slideDown(1500,function(){//显示
+				alert('aaaa')
+			})
+		})
+		$('button').eq(1).on('click',function(){
+			$('div').slideUp(1500,function(){//隐藏
+				alert('bbbb')
+			})
+		})
+		$('button').eq(2).on('click',function(){
+			$('div').slideToggle(1500,function(){//切换
+				alert('cccc')
+			})
+		})
+	})
+</script>
+</html>

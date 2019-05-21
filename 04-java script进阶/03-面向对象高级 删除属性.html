@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03-面向对象 删除属性</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Preson(name,age){
+		this.name=name;
+		this.age=age;
+	}
+	Preson.prototype.eye=function(){
+		this.eye=2;
+	}
+
+	var p1=new Preson('Tom',18);
+	console.log(p1.name)
+
+
+//在实例上添加一个实例上的同名属性会覆盖原来的
+	p1.age=19;
+
+	console.log(p1.age)
+
+
+	delete p1.name;
+	console.log(p1.name)
+
+	delete Preson.prototype.eye
+	console.log(p1.eye)
+
+
+	var p2=new Preson('Jack',28); 
+	console.log(p2.name)
+
+	//如果删除了原型上的属性，所有实例都访问不到该属性
+	console.log(p2.eye)
+
+</script>
+</html>

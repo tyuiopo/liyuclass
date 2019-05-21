@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>操作位置-滚动条</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			text-align: center;
+		}
+		.father{
+			width: 300px;
+			height: 300px;
+			border: 1px solid;
+			margin: 30px auto;
+			overflow: auto;
+		}
+		.son{
+			width: 2000px;
+			height: 2000px;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">点击</button>
+	<div class="father">
+		<div class="son"></div>
+	</div>
+
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		var Btn=document.getElementById('btn')
+		Btn.onclick=function(){
+			console.log($('.father').scrollTop());//获取元素垂直滚动距离
+			console.log($('.father').scrollLeft());//获取元素水平滚动距离
+			console.log($('.father').scrollTop(200));//设置元素垂直滚动距离
+			console.log($('.father').scrollLeft(200));//设置元素水平滚动距离
+		}
+	})
+</script>
+</html>

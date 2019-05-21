@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>10-面向对象高级 继承四</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Person(name,age){
+		this.name=name;
+		this.age=age;
+	}
+	Person.prototype.showName=function(){
+		console.log('I am'+this.name);
+	}
+	Person.prototype.showAge=function(){
+		console.log('I am'+this.age+'yeara old');
+	}
+	Person.prototype.Legs=2;
+
+
+	function Student(name,age,major){
+		/*
+		this.name=name;
+		this.age=age;
+		*/
+		Person.call(this,name,age)
+		this.major=major;
+	}
+
+
+	Student.prototype=Object.create(Person.prototype);
+	Student.prototype.constructor=Student;
+	console.log(Student.prototype);
+/*
+	var obj=Object.create(Person.prototype);
+	console.log(obj);
+/*
+	
+	/*
+	Student.prototype= new Person();
+	Student.prototype.constructor=Student;
+	*/
+	/*
+	for(var attr in Person.prototype){
+		Student.prototype[attr]=Person.prototype[attr];
+	}
+	*/
+	// Student.prototype=Person.prototype;
+	/*
+	Student.prototype.showName=function(){
+		console.log('I am'+this.name);
+	}
+	Student.prototype.showAge=function(){
+		console.log('I am'+this.age+'yeara old');
+	}
+	Student.prototype.Legs=2;
+	*/
+	Student.prototype.showMajor=function(){
+		console.log('I am'+this.major);
+	}
+	
+	var s1=new Student('Tom',18,'computer');
+	s1.showName();
+	s1.showAge();
+	s1.showMajor();
+	console.log(s1);
+	/*
+	Person.showName();
+	Person.showAge();
+	Person.showMajor();
+	*/
+</script>
+</html>

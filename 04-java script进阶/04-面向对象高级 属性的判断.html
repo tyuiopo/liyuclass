@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04-面向对象高级 属性的判断</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Preson(name,age){
+		this.name=name;
+		this.age=age;
+	}
+	Preson.prototype.eye=function(){
+		this.eye=2;
+	}
+
+	var p1=new Preson('Tom',18);
+
+//判断对象实例上是否有自己实例上指定的属性
+
+
+if(p1.hasOwnProperty('name')){
+	console.log(p1.name)
+}else{
+	console.log('no...')
+}
+
+//判断对象实例的原型链上是否有指定的属性
+
+if("eye"in p1){
+	console.log(p1.eye)
+}else{
+	console.log('no...')
+}
+
+if("name"in p1){
+	console.log(p1.name)
+}else{
+	console.log('no...')
+}
+
+//判断属性只在原型上有   列:return !obj.hasOwnProperty(name) && (name in obj);
+
+function hasOwnProperty(obj,attr){
+	return !obj.hasOwnProperty(attr) && (attr in obj)
+}
+
+</script>
+</html>

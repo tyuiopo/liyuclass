@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>操作class</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 200px;
+			height: 30px;
+			line-height: 30px;
+			margin-top: 10px;
+		}
+		.box2{
+			color: red;
+		}
+		.box3{
+			background-color: #ff6700;
+		}
+		.box4{
+			border:1px solid;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">点击</button>
+	<div>烧开后改好高大上</div>
+	<div>没理由让我看见额</div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('div').addClass('box2 box3');//添加
+		$('div').removeClass('box3');//删除
+
+
+		var Btn=document.getElementById('btn');
+		Btn.onclick=function(){
+			$('div').toggleClass('box4 box2')//切换(存在就删除不存在就添加)
+		}
+	})
+</script>
+</html>

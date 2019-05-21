@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Promise的使用</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//Promise的使用
+	let promise=new Promise((resolve,rejecr)=>{
+		//1.new Promise会立即执行函数
+		// console.log('aaaaa');
+		
+		//2.执行异步请求
+		//resolve函数在异步操作成功时(从pending变为fulfilled)调用,并将异步操作的结果作为参数传递出去
+		// resolve('成功');
+
+		//reject在异步操作失败时(从pending变为rejected)调用,并将异步操作报出的错误作为参数传递出去
+		rejecr('失败');
+	})
+	//3.通过promise实例对异步结果处理
+	promise//then(resolved状态的回调,rejected状态的回调),then方法返回的是一个新的Promise实例
+	.then((data)=>{
+		console.log('success::',data)
+	},(err)=>{
+		console.log('arr::',err)
+	})
+</script>
+</html>

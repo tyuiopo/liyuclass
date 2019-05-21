@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Promise的概念</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+		Promise有三种状态:
+			pending（进行中）
+			fulfilled（已成功）
+			rejected（已失败）
+	*/
+
+
+
+	/*
+	let promise=new Promise(()=>{
+
+	});
+	console.log(promise);
+	*/
+
+
+	/*
+	let promise=new Promise((resolve,reject)=>{
+		resolve();
+	});
+	console.log(promise);
+	*/
+	/*
+	let promise=new Promise((resolve,reject)=>{
+		reject();
+	});
+	console.log(promise);
+	*/
+
+
+
+	/*
+	let promise=new Promise((resolve,reject)=>{
+		resolve('hellow');
+	});
+	console.log(promise);
+	*/
+	let promise=new Promise((resolve,reject)=>{
+		reject('失败');
+	});
+	console.log(promise);
+</script>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js-134碰撞变色案例</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box1{
+			position: absolute;
+			left: 0;
+			top:0;
+			width: 150px;
+			height: 150px;
+			background: red;
+		}
+		#box2{
+			position: absolute;
+			left: 600px;
+			top: 250px;
+			width: 230px;
+			height: 230px;
+			background: blue;
+		}
+	</style>
+</head>
+<body>
+	<div id="box1"></div>
+	<div id="box2"></div>
+</body>
+<script>
+	var oBox1=document.getElementById('box1');
+	var oBox2=document.getElementById('box2');
+	var isDisX=0,isDisY=0;
+	oBox1.onmousedown=function(ev){
+		isDisX=ev.clientX-oBox1.offsetLeft;
+		isDisY=ev.clientY-oBox1.offsetTop;
+		document.onmousemove=function(ev){
+			oBox1.style.left=ev.clientX-isDisX+'px';
+			oBox1.style.top=ev.clientY-isDisY+'px';
+
+			if(oBox1.offsetLeft+oBox1.offsetWidth>oBox2.offsetLeft&&
+				oBox1.offsetLeft<oBox2.offsetLeft+oBox2.offsetWidth&&
+				oBox1.offsetTop+oBox1.offsetHeight>oBox2.offsetTop&&
+				oBox1.offsetTop<oBox2.offsetHeight+oBox2.offsetTop){
+				box2.style.background='purple';
+			}else{
+				box2.style.background='blue'
+			}
+		}
+		document.onmouseup=function(){
+			document.onmousemove=null;
+			document.onmouseup=null;
+		}
+	}
+
+
+</script>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery原理分析-exend方法</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function kQuery(){
+
+	};
+
+	// //在原型链上建立
+	// kQuery.prototype.exend=function(potions){
+	// 	console.log('111',this);
+	// 	for(key in potions){
+	// 		// kQuery.prototype[key]=potions[key];
+	// 		this[key]=potions[key];
+	// 	}
+	// };
+	// kQuery.prototype.exend({
+	// 	test1:function(){
+	// 		console.log('test1');
+	// 	}
+	// });
+
+
+	// //静态方法（直接建在函数本身上面）
+	// kQuery.exend=function(potions){
+	// 	console.log('222',this)
+	// 	for(key in potions){
+	// 		// kQuery[key]=potions[key];
+	// 		this[key]=potions[key];
+	// 	}
+	// }
+	// kQuery.exend({
+	// 	test2:function(){
+	// 		console.log('test2')
+	// 	}
+	// });
+
+	//合并
+	kQuery.prototype.exend=kQuery.exend=function(potions){
+		for(key in potions){
+			// kQuery.prototype[key]=potions[key];
+			this[key]=potions[key];
+		}
+	};
+
+
+	kQuery.prototype.exend({
+		test1:function(){
+			console.log('test1');
+		}
+	});
+
+	kQuery.exend({
+		test2:function(){
+			console.log('test2')
+		}
+	});
+
+	kQuery.test2();
+
+	var k=new kQuery();
+	k.test1();
+	
+</script>
+</html>

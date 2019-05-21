@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>设计模式 观察者模式(发布订阅者模式)</title>
+</head>
+<body>
+	
+</body>
+<script>
+	(function (w){
+		function Teather(name){
+			this.name=name;
+			this.students=[];
+		}
+
+		Teather.prototype={
+			constructor:Teather,
+			register:function(student){
+				this.students.push(student);
+			},
+			publish:function(task){
+				for(var i=0;i<this.students.length;i++){
+					this.students[i].listen(task);
+				}
+			}	
+		}
+		w.Teather=Teather
+	})(window);
+
+
+	(function (w){
+		function Student(name,teather){
+			this.name=name;
+			teather.register(this);
+		}
+
+		Student.prototype={
+			constructor:Student,
+			listen:function(task){
+				console.log(this.name+'got task:'+task);
+			}
+		}
+		w.Student=Student
+	})(window);
+
+	var T1=new Teather('Tom');
+
+	var S1=new Student('Leo',T1);
+	var S2=new Student('Peter',T1);
+
+	T1.publish('coding....')
+</script>
+</html>

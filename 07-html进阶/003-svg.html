@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>svg</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		svg{
+			background-color: grey;
+		}
+		rect{
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<!-- SVG视口是指可见区域的大小(画布的大小) -->
+	<!-- viewBox会根据坐标点和宽高来截取视口,把截取后的内容全屏 -->
+	<svg width='800' height='600' viewBox='0 0 80 60'>
+		<rect width='40' height='30' />
+	</svg>
+</body>
+</html>

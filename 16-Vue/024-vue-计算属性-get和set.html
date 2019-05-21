@@ -1,0 +1,53 @@
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		<p>firstName:{{firstName}}</p>
+		<p>lastName:{{lastName}}</p>
+		<p>fullName:{{fullName}}</p>
+		<input type="text" v-model="fullName">
+	</div>
+</body>
+<script src="vue/vue.js"></script>
+<script>
+	let vm = new Vue({
+		el:'#app',
+		data:{
+			firstName:'Li',
+			lastName:'jack'
+		},
+		computed:{
+			// getter 写法一
+			/*
+			fullName(){
+				return this.firstName + ' ' + this.lastName
+			}
+			*/
+
+			// 写法二
+			/*
+			fullName:{
+				get(){
+					return this.firstName + ' ' + this.lastName
+				}
+			}
+			*/
+			fullName:{
+				get(){
+					return this.firstName + ' ' + this.lastName
+				},
+				set(newValue){
+					var names = newValue.split(' ')
+					this.firstName = names[0]
+					this.lastName = names[names.length - 1]
+				}
+			}
+		}
+	});
+</script>
+</html>

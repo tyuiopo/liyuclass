@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>浮动元素的清除	2</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;	
+		}
+		.father1{
+			background-color:pink;
+		}
+		.father2{
+			background-color:yellow;
+		}
+		.father1 p{
+			width: 60px;
+			float:left;
+			background-color:red;
+		}
+		.father2 p{
+			width: 60px;
+			float:left;
+			background-color:blue;
+		}
+	</style>
+</head>
+<body>
+	<div class="father1">
+		<p>1</p>
+		<p>2</p>
+		<p>3</p>
+	</div>
+	<div class="father2">
+		<p>11</p>
+		<p>22</p>
+		<p>33</p>
+	</div>
+</body>
+</html>

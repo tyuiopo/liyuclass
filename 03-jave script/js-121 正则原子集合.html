@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js-121 正则原子集合</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var str='jsdhfk978wuyriu45mnbcm3121nxa fjqpoe452_@#$%&'
+
+	var reg=/[0-9]/g
+	var reg2=/[\d]/g
+	var reg3=/[^0-9]/g
+	var reg4=/[\D]/g
+	var reg5=/[0-9a-zA-Z_]/g
+	var reg6=/\w/g
+	var reg7=/[^0-9a-zA-Z_]/g
+	var reg7=/[\W]/g
+	var reg8=/[\t\n\f\r\v]/g
+	var reg9=/[\s]/g
+	var reg10=/[^\t\n\f\r\v]/g
+	var reg11=/[\S]/g
+
+
+
+	console.log(str.replace(reg,'*'));
+	console.log(str.replace(reg2,'*'));
+	console.log(str.replace(reg3,'*'));
+	console.log(str.replace(reg4,'*'));
+	console.log(str.replace(reg5,'*'));
+	console.log(str.replace(reg6,'*'));
+	console.log(str.replace(reg7,'*'));
+	console.log(str.replace(reg8,'*'));
+	console.log(str.replace(reg9,'*'));
+	console.log(str.replace(reg10,'*'));
+	console.log(str.replace(reg11,'*'));
+
+
+</script>
+</html>

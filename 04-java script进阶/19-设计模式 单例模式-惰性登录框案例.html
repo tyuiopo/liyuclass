@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>19-设计模式 单例模式-惰性登录框案例</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		/*
+		#box{
+			position: absolute;
+			left: 600px;
+			top:150px;
+			width: 150px;
+			height: 150px;
+			background: #666;
+		}*/
+	</style>
+</head>
+<body>
+	<button id="btn">登录</button>
+	<!-- <div id="box"></div> -->
+</body>
+<script>
+	var oBtn=document.getElementById('btn')
+	var oBox=document.getElementById('box')
+	var obj=null;
+	function getSingle(fn){
+		if(!obj){
+			obj=fn();
+		}
+		return obj;
+	}
+	function Bulid(){
+		var oDiv=document.createElement('div');
+		oDiv.style.width=150+'px';
+		oDiv.style.height=150+'px';
+		oDiv.style.background='#666';
+		oDiv.style.position='absolute';
+		oDiv.style.left=600+'px';
+		oDiv.style.top=150+'px';
+		document.body.appendChild(oDiv);
+		return oDiv;
+	}
+	oBtn.onclick=function(){
+		getSingle(Bulid);
+	}
+/*
+	oBtn.onclick=function(){
+		var oDiv=document.createElement('div');
+		oDiv.style.width=150+'px';
+		oDiv.style.height=150+'px';
+		oDiv.style.background='#666';
+		oDiv.style.position='absolute';
+		oDiv.style.left=600+'px';
+		oDiv.style.top=150+'px';
+		document.body.appendChild(oDiv);
+	}
+*/
+</script>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>建立网站</title>
+	<link rel="stylesheet" href="../zidingyi1/font_x99p9vi911l/iconfont.css">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.page>input,.page>a{
+			position: fixed;
+			top: 0px;
+			width: 20%;
+			height:35px;
+			text-align: center;
+			line-height:35px;
+			background-color: #222;
+		}
+		i{
+			margin-right:7px;
+		}
+		#first,#first+ a {
+			left: 0%;
+		}
+		#second,#second+ a {
+			left: 20%;
+		}
+		#third,#third+ a {
+			left: 40%;
+		}
+		#fourth,#fourth+ a {
+			left: 60%;
+		}
+		#fifth,#fifth+ a {
+			left: 80%;
+		}
+		.page>input:checked+a {
+			color: red;
+		}
+		.page>input{
+			z-index: 999;
+			opacity: 0;
+		}
+		.page>input+a{
+			font-size: 20px;
+			text-decoration: none;
+			color:white;
+			z-index: 2;
+		}
+		.page>input:hover+a{
+			background-color: #111;
+		}
+		html,body{
+			height: 100%;
+			overflow: hidden;
+		}
+		body{
+			height: 100%;
+		}
+		.page{
+			height: 100%;
+		}
+		.box{
+			margin-top: 35px;
+			width: 100%;
+			height: 100%;
+			border:1px solid;
+			transition: all 1s;
+		}
+		.box1{
+			height: 100%;
+			background-repeat: no-repeat;
+			background-size:100% 100%;
+		}
+		#first:checked~.box{
+			transform: translateY(0%);
+		}
+		#second:checked~.box{
+			transform: translateY(-100%);
+		}
+		#third:checked~.box{
+			transform: translateY(-200%);
+		}
+		#fourth:checked~.box{
+			transform: translateY(-300%);
+		}
+		#fifth:checked~.box{
+			transform: translateY(-400%);
+		}
+		#yy{
+			background-image:url(../xk1.jpg);
+		}
+		#uu{
+			background-image: url(../xk2.jpg);
+		}
+		#ii{
+			background-image: url(../xk3.jpg);
+		}
+		#oo{
+			background-image: url(../xk4.jpg);
+		}
+		#pp{
+			background-image: url(../xk6.jpg);
+		}
+		#first:checked~.box>#yy{
+			animation: oo 0.6s linear 0s 1 normal;
+		}
+		#second:checked~.box>#uu{
+			animation: oo 0.6s linear 0s 1 normal;
+		}
+		#third:checked~.box>#ii{
+			animation: oo 0.6s linear 0s 1 normal;
+		}
+		#fourth:checked~.box>#oo{
+			animation: oo 0.6s linear 0s 1 normal;
+		}
+		#fifth:checked~.box>#pp{
+			animation: oo 0.6s linear 0s 1 normal;
+		}
+		@keyframes oo{
+			from{
+				opacity:0;
+			}
+			to{
+				opacity: 0.6;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="page">
+		<input type="radio" name="ser" id="first" checked>
+		<a href="#"><i class="iconfont icon-changjingguanli"></i>Home</a>
+		<input type="radio" name="ser" id="second">
+		<a href="#"><i class="iconfont icon-gongnengdingyi"></i>Scetion</a>
+		<input type="radio" name="ser" id="third">
+		<a href="#"><i class="iconfont icon-jishufuwu"></i>About</a>
+		<input type="radio" name="ser" id="fourth">
+		<a href="#"><i class="iconfont icon-zhanghaoquanxianguanli"></i>Team</a>
+		<input type="radio" name="ser" id="fifth">
+		<a href="#"><i class="iconfont icon-icon_zhanghao"></i>Contact</a>
+		<div class="box">
+			<div class="box1" id="yy"></div>
+			<div class="box1" id="uu"></div>
+			<div class="box1" id="ii"></div>
+			<div class="box1" id="oo"></div>
+			<div class="box1" id="pp"></div>
+		</div>
+	</div>
+</body>
+</html>

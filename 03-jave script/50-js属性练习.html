@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>50-js属性练习</title>
+</head>
+<body>
+	<input type="text" id="tet">
+	<input type="button" id="btn" value="点击">
+	<textarea id="ter" cols="30" rows="10"></textarea>
+</body>
+<script>
+	var oTet=document.getElementById('tet');
+	var oBtn=document.getElementById('btn');
+	var oTer=document.getElementById('ter');
+	oBtn.onclick=function(){
+		/*
+		var val=oTet.value;
+		oTer.value=val;
+		*/
+		var val=oTet['value'];
+		oTer['value']=val;
+	}
+</script>
+</html>

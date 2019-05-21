@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>盒模型练习-margin垂直重叠</title>
+	<style>
+		*{
+			margin:0px;
+			padding: 0px;
+		}
+		.sun{
+			border:2px dashed;
+		}
+		.center1{
+			width: 300px;
+			height: 500px;
+			background:yellow;
+			text-indent:2em;
+			border:1px solid red;
+			padding:10px;
+			margin:20px;
+		}
+		.center2{
+			width: 300px;
+			height: 500px;
+			background:pink;
+			border:1px dashed blue;
+			text-indent:2em;
+			margin:30px;
+		}
+		.father{
+			overflow:hidden;
+		}
+	</style>
+</head>
+<body>
+	<div class="sun">
+		<div class="father">
+			<div class="center1">
+			北京时间10月31日讯，今天NBA多场比赛进行，其中火箭主场迎来开拓者的挑战，本赛季开拓者双枪状态神勇，连克强敌，而火箭则是难求一胜，更有多名球员缺阵，最终开拓者104-85轻取火箭。主场85分也是破了德安东尼执教以来的主场最低分，赛后德安东尼称火箭打得像垃圾。
+			</div>
+		</div>
+		<div class="center2">
+		就在刚刚，据《纽约时报》著名NBA记者马克-斯坦报道，森林狼管理层就火箭交易巴特勒的事情达成一致意见，那就是森林狼决定不与火箭交易，主要原因就是森林狼管理层担心巴特勒的加盟会让火箭重新回到西部强队，威胁到森林狼在西部的竞争力。这里弱弱地说一句，森林狼是不是有点高估自己了，无论火箭是不是强队，森林狼就凭借维金斯和唐斯这两个“天赋”球星，也不可能杀出西部的。
+		</div>
+	</div>
+</body>
+</html>

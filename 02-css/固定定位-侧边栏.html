@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>固定定位-侧边栏</title>
+	<style>
+		.father{
+			width:500px;
+			height: 500px;
+			border:2px solid;
+			margin: 50px auto;
+		}
+		.son1{
+			width:100px;
+			height: 200px;
+			background-color: red;
+			position:fixed;
+			left:0;
+			top:50%;
+			margin-top: -100px;
+		}
+		body{
+			height: 3000px;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son1"></div>
+	</div>
+</body>
+</html>

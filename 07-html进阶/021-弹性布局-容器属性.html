@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>弹性布局-容器属性</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father{
+			width:700px;
+			height: 500px;
+			border:10px solid #ff6700;
+			margin: 50px auto;
+			display: flex;
+
+
+			/*flex-direction 决定项目的排列方向*/
+
+			/*flex-direction: rom; 默认值*/
+			/*flex-direction: row-reverse; 水平方向,起点在右端*/
+			/*flex-direction: column; :垂直方向,起点在上沿*/
+			/*flex-direction: column-reverse; 垂直方向,起点在下沿*/
+			
+
+			/*flex-wrap 决定项目一行排不下，如何换行*/
+
+			/*flex-wrap: nowrap;(默认值):不换行,元素的宽度按照指定款的的比例从新计算*/
+			/*flex-wrap:wrap;	 
+			换行,第一行在上方,换行后项目的垂直对齐方式由align-items/align-content来决定*/
+			/*flex-wrap: wrap-reverse;换行,第一行在下方*/
+
+			
+			/*flex-flow*/
+			/*flex-direction属性和flex-wrap属性的简写形式,默认值为row nowrap*/
+
+			
+			/*justify-content 决定项目的水平对齐方式*/
+
+			/*justify-content:flex-start;(默认值):左对齐*/
+			/*justify-content: flex-end;右对齐*/
+			/*justify-content:center;居中*/
+			/*justify-content: space-between;两端对齐,项目之间的间隔都相等。*/
+			/*justify-content: space-around;每个项目两侧的间隔相等。所以,项目之间的间隔比项目与边框的间隔大一倍。*/
+		}
+		.son{
+			height: 50px;
+			line-height: 50px;
+		}
+		.son1{
+			width: 100px;
+			background: red;
+		}
+		.son2{
+			width: 200px;
+			background: blue;
+		}
+		.son3{
+			width: 300px;
+			background: gray;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son son1">div1</div>
+		<div class="son son2">div2</div>
+		<div class="son son3">div3</div>
+	</div>
+</body>
+</html>

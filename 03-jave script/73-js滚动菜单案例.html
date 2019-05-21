@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>73-js滚动菜单案例</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#father{
+			width: 400px;
+			height: 400px;
+			background: #ccc;
+			position:absolute;
+			left:-400px;
+			top:0;
+		}
+		#son{
+			width: 100px;
+			height: 400px;
+			background: #f67;
+			position: absolute;
+			top:0;
+			right: -100px;
+		}
+	</style>
+</head>
+<body>
+	<div id="father">
+		<div id="son"></div>
+	</div>
+</body>
+<script> 
+	var oBox1=document.getElementById('father');
+	var oBox2=document.getElementById('son');
+	var tmer=0;
+	oBox1.onmouseover=function(){
+		clearInterval(tmer);
+		var iSneep=0;
+		tmer=setInterval(function(){
+			if(oBox1.offsetLeft<0){
+				iSneep=7;
+			}else{
+				iSneep=-7;
+			}
+			if(Math.abs(0-oBox1.offsetLeft)<Math.abs(iSneep)){
+				oBox1.style.left='0px';
+				clearInterval(tmer);
+			}else{
+				oBox1.style.left=oBox1.offsetLeft+iSneep+'px';
+			}
+		},33)
+	}
+	oBox1.onmouseout=function(){
+		clearInterval(tmer);
+		var iSneep=0;
+		tmer=setInterval(function(){
+			if(oBox1.offsetLeft<-400){
+				iSneep=7;
+			}else{
+				iSneep=-7;
+			}
+			if(Math.abs(-400-oBox1.offsetLeft)<Math.abs(iSneep)){
+				oBox1.style.left='-400px';
+				clearInterval(tmer);
+			}else{
+				oBox1.style.left=oBox1.offsetLeft+iSneep+'px';
+			}
+		},33)
+	}
+</script>
+</html>

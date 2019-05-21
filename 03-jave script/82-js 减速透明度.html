@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>82-js 减速透明度</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 200px;
+			height: 200px;
+			background: #f76;
+			opacity: 0.4;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">点击变色</button>
+	<div id='box'></div>
+</body>
+<script>
+	var oBtn=document.getElementById('btn');
+	var oBox=document.getElementById('box');
+	var tmer=0;
+	oBtn.onclick=function(){
+		clearInterval(tmer);
+		tmer=setInterval(function(){
+			var iOpacity=parseFloat(getComputedStyle(oBox,false)['opacity'])
+			iOpacity=Math.round(iOpacity*100);
+			var iSennp=(100-iOpacity)/10
+			iSennp=Math.ceil(iSennp)
+			if(iOpacity==100){
+				clearInterval(tmer);
+			}else{
+				oBox.style.opacity=(iOpacity+iSennp)/100;
+			}
+			console.log(iOpacity,iSennp)
+		},30)
+	}
+</script>
+</html>

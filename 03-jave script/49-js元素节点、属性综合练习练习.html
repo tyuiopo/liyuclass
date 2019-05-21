@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+		margin: 0;
+		padding: 0;
+		}	
+	</style>
+</head>
+<body>
+	<ul id="ul1">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+</body>
+<script>
+	var oUl=document.getElementById('ul1');
+	var oLi=oUl.children;
+	// console.log(oLi[0]);
+	var oLia=document.createElement('li');
+	var oLib=document.createElement('li');
+	oLia.innerHTML=4;
+	oUl.appendChild(oLia);
+  	oLib.innerHTML=0;
+  	oUl.insertBefore(oLib,oLi[0]);
+  	oUl.removeChild(oLi[1]);
+
+</script>
+</html>

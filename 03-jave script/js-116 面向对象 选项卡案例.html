@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js-116 面向对象 选项卡案例</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style: none;
+		}
+		#tab-list{
+			overflow: hidden;
+			margin-bottom: 20px;
+		}
+		#tab-list li,
+		#tab-list1 li{
+			float: left;
+			width: 40px;
+			height: 40px;
+			margin-left: 20px;
+			line-height: 40px;
+			text-align: center;
+			cursor: pointer;
+		}
+		#tab-container li,
+		#tab-container1 li{
+			width: 400px;
+			height: 400px;
+			line-height: 400px;
+			border: 1px solid #000;
+			font-size: 100px;
+			text-align: center;
+			display: none;
+		}
+		#tab-list .active,
+		#tab-list1 .active{
+			color: #ff6700;
+			border-bottom: 2px solid #ff6700;
+		}
+		#tab-container .show,
+		#tab-container1 .show{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<ul id="tab-list">
+		<li class="active">选项</li>
+		<li>选项</li>
+		<li>选项</li>
+		<li>选项</li>
+	</ul>
+	<ul id="tab-container">
+		<li class="show">1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+
+
+	<!-- <ul id="tab-list1"> 
+		<li class="active">选项</li>
+		<li>选项</li>
+		<li>选项</li>
+		<li>选项</li>
+	</ul>
+	<ul id="tab-container1">
+		<li class="show">1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>-->
+</body>
+<script>
+	/*
+	function Tab(){
+		this.oBtn1=document.querySelector('#tab-list li')
+		this.oBtn2=document.querySelector('#tab-container li')
+
+		this.topp();
+
+	}
+	Tab.prototype.topp=function(){
+		var _this=this;
+		for(var i=0;i<this.oBtn1.length;i++){
+			this.oBtn1[i].index=i;
+			this.oBtn1[i].onclick=function(){
+				_this.bottomm(this);
+			}
+		}
+	}
+
+	Tab.prototype.bottomm=function(oBtn1){
+		for(var i=0;i<this.oBtn2.length;i++){
+			this.oBtn1[i].className='';
+			this.oBtn2[i].style.display='none';
+		}
+		oBtn1.className='active';
+		this.oBtn2[oBtn1.index].style.display='block';
+	}
+
+	new Tab();
+	*/
+	function Tab(oBtn1,oBtn2){
+		this.oBtn1=oBtn1;
+		this.oBtn2=oBtn2;
+		Tab.prototype.tab=function(){
+			for(var i=0;i<this.oBtn1.length;i++){
+				oBtn1[i].index=i;
+				var _this=this;
+				this.oBtn1[i].onclick=function(){
+					for(var j=0;j<_this.oBtn1.length;j++){
+						_this.oBtn1[j].className='';
+						_this.oBtn2[j].style.display='none';
+					}
+					this.className='active';
+					_this.oBtn2[this.index].style.display='block';
+				}
+			}
+		}
+	}
+	var oBtn1=document.querySelectorAll('#tab-list li');
+	var oBtn2=document.querySelectorAll('#tab-container li');
+
+	var person=new Tab(oBtn1,oBtn2);
+	person.tab();
+
+</script>
+</html>

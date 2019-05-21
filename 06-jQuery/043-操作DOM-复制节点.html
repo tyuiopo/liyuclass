@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>操作DOM-复制节点</title>
+</head>
+<body>
+	<button>复制1</button>
+	<button>复制2</button>
+	<div>
+		我是DIV
+		<p>你好</p>
+	</div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('div').on('click',function(){
+			alert('1111')
+		});
+		//jQuery对象.clone(false|true) 复制一个节点,默认是false不会复制事件,true会复制事件
+		$('button').eq(0).on('click',function(){
+			var $Div=$('div').clone();
+			$('body').append($Div)
+		});
+		
+		$('button').eq(1).on('click',function(){
+			var $Div=$('div').clone(true);
+			$('body').append($Div)
+		})
+	})
+</script>
+</html>

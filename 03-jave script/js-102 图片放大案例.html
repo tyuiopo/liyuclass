@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js-102 图片放大案例</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.bigbox{
+			width: 450px;
+			height: 550px;
+			position: absolute;
+			left: 0;
+			top:0;
+		}
+		.bigbox img{
+			width: 100%;
+			height: 100%;
+		}
+		.bigbox #mask{
+			width: 200px;
+			height: 250px;
+			background: rgba(9,9,9,0.3);
+			position: absolute;
+			left: 0;
+			top: 0;
+			display: none;
+			cursor: move;
+		}
+		ul{
+			width: 450px;
+			height: 50px;
+			position: absolute;
+			left: 0;
+			top:555px;
+			list-style: none;
+		}
+		ul li{
+			width: 80px;
+			height: 80px;
+			float: left;
+			margin-left:15px;
+			opacity: 0.7;
+		}
+		ul li.active{
+			opacity: 1;
+		}
+		ul li img{
+			width: 100%;
+			height: 100%;
+		}
+		.max{
+			width: 600px;
+			height: 600px;
+			position: absolute;
+			left: 452px;
+			top:0;
+			display: none;
+			overflow:hidden;
+		}
+		.max img{
+			position: absolute;
+			left: 0;
+			top:0;
+			width: 800px;
+			height: 850px;
+		}
+	</style>
+</head>
+<body>
+		<div class="bigbox">
+			<img src="Numimg/bigbox1.png" alt="">
+			<span id="mask"></span>
+		</div>
+		<ul>
+			<li class="active"><img src="Numimg/smoll1.jpg" alt=""></li>
+			<li><img src="Numimg/smoll2.jpg" alt=""></li>
+			<li><img src="Numimg/smoll3.jpg" alt=""></li>
+			<li><img src="Numimg/smoll4.jpg" alt=""></li>
+		</ul>
+		<div class="max">
+			<img src="Numimg/max1.jpg" alt="">
+		</div>
+</body>
+<script>
+	var oLi=document.querySelectorAll('li')
+	var bigBox=document.querySelector('.bigbox')
+	var smallImg=document.querySelectorAll('li img')
+	var bigImg=document.querySelector('.bigbox img')
+	var Maximg=document.querySelector('.max img')
+	var oMax=document.querySelector('.max')
+	var oMask=document.getElementById('mask')
+	for(var i=0;i<oLi.length;i++){
+		oLi[i].index=i;
+		oLi[i].onmouseover=function(){
+			for(var j=0;j<oLi.length;j++){
+				oLi[j].className=''
+			}
+			smallImg.src='Numimg/smoll'+(this.index+1)+'.jpg'
+			bigImg.src='Numimg/bigbox'+(this.index+1)+'.png'
+			Maximg.src='Numimg/max'+(this.index+1)+'.jpg'
+			this.className='active';
+		}
+	}
+	bigBox.onmouseover=function(){
+		oMask.style.display='block';
+		oMax.style.display='block';
+		oMask.onmousemove=function(ev){
+			var l=ev.clientX-oMask.offsetWidth*0.5;
+			var t=ev.clientY-oMask.offsetHeight*0.5;
+			if(l<0){
+				l=0
+			}else if(l>=bigBox.offsetWidth-oMask.offsetWidth){
+				l=bigBox.offsetWidth-oMask.offsetWidth
+			}
+			if(t<0){
+				t=0
+			}else if(t>=bigBox.offsetHeight-oMask.offsetHeight){
+				t=bigBox.offsetHeight-oMask.offsetHeight
+			}
+			oMask.style.left=l+'px'
+			oMask.style.top=t+'px'
+
+			var paercentX=l/(bigBox.offsetWidth-oMask.offsetWidth);
+			var paercentY=t/(bigBox.offsetHeight-oMask.offsetHeight);
+
+			Maximg.style.left=paercentX*(oMax.offsetWidth-Maximg.offsetWidth)+'px'
+			Maximg.style.top=paercentY*(oMax.offsetHeight-Maximg.offsetHeight)+'px'
+		}
+	}
+	bigBox.onmouseout=function(){
+		oMask.style.display='none';
+		oMax.style.display='none';
+	}
+</script>
+</html>

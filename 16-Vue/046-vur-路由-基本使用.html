@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		<div>
+			<nav>
+				<router-link to="/home">home</router-link>
+				<router-link to="/article">article</router-link>
+				<router-link to="/about">about</router-link>
+			</nav>
+		</div>
+		<div class="pages">
+			<!-- 路由出口 -->
+			<!-- 路由匹配到的组件将渲染在这里 -->
+			<router-view></router-view>
+		</div>
+	</div>
+	<template id="home">
+		<div>this is home page</div>
+	</template>
+	<template id="article">
+		<div>this is article page</div>
+	</template>
+	<template id="about">
+		<div>this is about page</div>
+	</template>
+</body>
+<script src="vue/vue.js"></script>
+<script src="vue/vue-router.js"></script>
+<script>
+	// 1. 定义 (路由) 组件。
+	const Home = Vue.extend({
+		template:'#home'
+	})
+	const Article = Vue.extend({
+		template:'#article'
+	})
+	const About = Vue.extend({
+		template:'#about'
+	})
+
+	// 2. 定义路由
+	const routes = [
+		{path:'/home',component:Home},
+		{path:'/article',component:Article},
+		{path:'/about',component:About},
+		{path: '/', redirect: '/home' }
+	]
+
+	// 3. 创建 router 实例，然后传 `routes` 配置
+	const router = new VueRouter({
+		// routes:routes
+		routes
+	})
+
+	// 4. 创建和挂载根实例。
+	let vm = new Vue({
+		el:'#app',
+		// router:router,
+		router,
+		data:{
+
+		}
+	})
+</script>
+</html>

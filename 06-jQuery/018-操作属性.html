@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>操作属性</title>
+</head>
+<body>
+	<input type="text" value="aa" name="a">
+	<input type="text" value="bb" name="b">
+	<input type="checkbox">
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+
+		//获取,注意:只能获取第一个元素的值
+		console.log($('input').attr("name"));
+		console.log($('input').eq(1).attr("name"));
+		console.log($('input').prop("name"));
+
+		//设置,注意:设置所有元素的值
+		// console.log($('input').attr("name","aaa1"));
+		console.log($('input').prop("name","aaa1"));
+
+		//删除,注意:删除所有元素的值
+		// console.log($('input').removeAttr("value"));
+		// console.log($('input').removeProp("value"));
+		console.log($('input').removeProp("checkbox"));
+
+
+		//attr和prop的区别
+		//属性节点的值具有true和false时
+		//(如checked,selected,disabled),如果没有添加该属性时,attr会返回undefined,prop返回true,
+		//因此,属性节点的值具有true和false时用prop,其他的用attr
+
+	})
+</script>
+</html>

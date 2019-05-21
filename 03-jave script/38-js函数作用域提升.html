@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>38-js函数作用域提升</title>
+</head>
+<body>
+	
+</body>
+<script>
+	console.log(a);
+	var a=5;
+	function fun(){
+		console.log(a);
+		var a=3;
+	}
+	fun();
+</script>
+</html>

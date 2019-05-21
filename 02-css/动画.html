@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box1{
+			width: 300px;
+			height:300px;
+			background-color: red;
+			transition:width 2s;
+		}
+		.box1:hover{
+			width: 600px;
+		}
+		.box2{
+			width: 300px;
+			height: 300px;
+			background-color: blue;
+			margin-top: 30px;
+			animation-name:jj;
+			animation-duration: 2s;
+		}
+		@keyframes jj{
+			from{
+				width: 300px;
+			}
+			to{
+				width: 600px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+	<div class="box2"></div>
+</body>
+</html>

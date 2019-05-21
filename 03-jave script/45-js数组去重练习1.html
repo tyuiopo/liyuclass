@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组去重</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr1=[1,2,3,4,5,2,3,8,7,8]
+	console.log('ee',arr1);
+	var arr2=[];
+	
+	function num(arr){
+		for(var i=0;i<arr.length;i++){
+			var isDup=false;
+			for(var j=0;j<arr2.length;j++){
+				if(arr[i]==arr2[j]){
+					isDup=true;
+				}
+			}
+			if(!isDup){
+				arr2.push(arr[i]);
+			}
+		}
+	}
+	num(arr1);
+	console.log('ee',arr2);
+</script>
+</html>

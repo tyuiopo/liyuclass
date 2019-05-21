@@ -1,0 +1,170 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+div{
+	margin-bottom: 20px;
+}
+@color:#ff6700;
+@height:40px;
+@width:400px;
+@background:gray;
+.box1{
+	width:@width;
+	height:@height;
+	color:@color;
+	background:@background;
+}
+.box2{
+	.box1
+}
+
+
+//基本混合,直接把选择器写在另外一个选择中
+.border-radius{
+	//border-radius:10px;
+}
+
+
+//带参数
+/*
+.border-radius(@r){
+	-webkit-border-radius:@r;
+  	-ms-border-radius:@r;
+  	-o-border-radius:@r;
+	border-radius:@r;
+}
+*/
+//带参数,默认值
+.border-radius-def(@r:10px){
+		-webkit-border-radius:@r;
+  	-ms-border-radius:@r;
+  	-o-border-radius:@r;
+		border-radius:@r;
+}
+
+.box3{
+	.box1;
+	//.border-radius;
+	//.border-radius(20px);
+	.border-radius-def;
+}
+
+
+
+.triangle(top,@w,@c){
+/*
+	width:0;
+	height:0;
+	border-style:solid;
+	overflow: hidden;
+*/
+	border-width:@w;
+	border-color:@c transparent transparent transparent;
+}
+.triangle(right,@w,@c){
+	/*
+	width:0;
+	height:0;
+	border-style:solid; 
+	overflow: hidden;
+	*/
+	border-width:@w;
+	border-color:transparent @c transparent transparent;
+}
+.triangle(bottom,@w,@c){
+	/*
+	width:0;
+	height:0;
+	border-style:solid;
+	overflow: hidden;
+	*/
+	border-width:@w;
+	border-color:transparent transparent @c transparent;
+}
+.triangle(left,@w,@c){
+	/*
+	width:0;
+	height:0;
+	border-style:solid;
+	overflow: hidden;
+	*/
+	border-width:@w;
+	border-color:transparent transparent transparent @c;
+}
+//匹配模式
+.triangle(@_,@w,@c){
+	width:0;
+	height:0;
+	border-style:solid;
+	overflow: hidden;
+}
+
+
+
+.box4{
+	.triangle(top,100px,pink);
+	//.triangle(right)
+	//.triangle(bottom)
+	//.triangle(left,100px,pink)
+}
+
+
+//嵌套
+.list{
+	width:400px;
+	margin-bottom: 20px;
+	li{
+		width: 100%;
+		height: 30px;
+		line-height: 30px;
+		list-style: none;
+		border:1px solid;
+		span{
+			float: left;
+		}
+		p{
+			float: right;
+		}
+		&:hover{
+			background-color:@color;
+		}
+	}
+}
+
+
+//运算
+.fs(@val){
+	// font-size: @val - 10px;
+	// font-size: @val + 10px;
+	// font-size: @val * 10px;
+	font-size: @val / 10px;
+}
+.box5{
+	.fs(30px);
+}
+
+//避免编译  属性:~'css的值'
+/*
+.box6{
+	font-size: calc(30px - 10px);
+}
+*/
+.box6{
+	font-size:~'calc(30px-10px)'
+}
+
+//!important关键字
+.box7{
+	.box1 !important;
+}
+
+
+//混合参数做为属性和设置计算后的属性值
+.set(@attr,@val){
+	// @{attr}:unit(@val,px)
+	@{attr}:unit(@val/10,px)
+}
+.box8{
+	.set(width,100)
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>06-js内部样式-变量</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			margin: 300px auto;
+		}
+	</style>
+	<script>
+		function topig(){
+			var ss=document.getElementById('uu');
+			ss.style.width='400px';
+			ss.style.height='400px';
+			ss.style.backgroundColor='blue';
+		}
+		function nopig(){
+			var ss=document.getElementById('uu');
+			ss.style.width='200px';
+			ss.style.height='200px';
+			ss.style.backgroundColor='red';
+		}
+	</script>
+</head>
+<body>
+	<div id="uu" onmouseover="topig()" onmouseout="nopig()"></div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>84-js 匀速中部固定</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			height: 3000px;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background: #f76;
+			position: absolute;
+			right: 0;
+			top:600px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script src="js/匀速动画封装函数.js"></script>
+<script>
+	var oBox=document.getElementById('box');
+	// oBox.style.top=window.innerHeight-oBox.offsetHeight+getScrollTop()+'px'
+	window.onload=window.onresize=window.onscroll=function(){
+		var iTage=(window.innerHeight-oBox.offsetHeight)/2+getScrollTop()
+		animate(oBox,'top',iTage)
+		// console.log(getScrollTop())
+	}
+</script>
+</html>

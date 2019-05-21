@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>67-倒计时优化</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background: #000;
+		}
+		div{
+			margin-top: 100px;
+			text-align: center;
+			color: #fff;
+			font-size: 40px;
+		}
+		img{
+			width: 20px;
+			height: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div id="time">
+		距离结束时间仅剩
+		<img src="Numimg/0.png" alt="">
+		<img src="Numimg/1.png" alt="">
+		小时
+		<img src="Numimg/2.png" alt="">
+		<img src="Numimg/6.png" alt="">
+		分
+		<img src="Numimg/3.png" alt="">
+		<img src="Numimg/5.png" alt="">
+		秒
+	</div>
+</body>
+<script>
+	var aTime=document.getElementById('time');
+
+	var aImg=aTime.children;
+	
+	var downTime=new Date('2018-12-07 19:23:58');
+	
+	var temr=downTime.getTime();
+
+	var xx=0;
+
+	function Time(){
+		var notTime=new Date();
+		var allSeconds=temr-notTime.getTime();
+		function to2Sr(num){
+			return num<10?'0'+num:''+num
+		}
+		if(allSeconds<=0){
+			allSecond=0;
+			clearInterval(xx);
+		}
+		var allSecond=allSeconds/1000;
+		var iHour=parseInt(allSecond/3600);
+		var iMinute=parseInt((allSecond%3600)/60);
+		var iSecond=parseInt((allSecond%3600)%60);
+		aTime=to2Sr(iHour)+to2Sr(iMinute)+to2Sr(iSecond);
+		for(var i=0;i<aImg.length;i++){
+			aImg[i].src='Numimg/'+aTime.charAt(i)+'.png'
+		}
+	}
+	xx=setInterval(Time,500);
+	Time();
+</script>
+</html>

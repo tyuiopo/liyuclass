@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>12-面向对象高级 继承拖拽案例</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Father(options){
+		this.width=options.width;
+		this.height=options.height;
+		this.background=options.background;
+		this.oBox=null;
+		this.init();
+		this.bindEvent();
+	}
+	Father.prototype.init=function(){
+		this.oBox=document.createElement('div');
+		this.oBox.style.position='absolute';
+		this.oBox.style.left=0;
+		this.oBox.style.top=0;
+		this.oBox.style.width=this.width+'px';
+		this.oBox.style.height=this.height+'px';
+		this.oBox.style.background=this.background;
+		document.body.appendChild(this.oBox)
+	}
+	Father.prototype.bindEvent=function(){
+
+	}
+
+
+
+
+
+	new Father({
+		width:100,
+		height:100,
+		background:'red',
+	})
+
+</script>
+</html>

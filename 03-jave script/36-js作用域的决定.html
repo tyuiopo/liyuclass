@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>36-js作用域的决定</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var a=1;
+	function fun1(){
+		console.log('aa1',a);//1
+	}
+
+	function fun2(){
+		var a=2;
+		fun1();
+	}
+	fun2();
+	console.log('aa2',a);//1
+</script>
+</html>

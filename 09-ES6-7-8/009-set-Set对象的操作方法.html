@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Set对象的操作方法</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+		let s = new Set()
+		let s = new Set(数组)
+		add(value):添加某个值,返回 Set 结构本身
+		delete(value):删除某个值,返回一个布尔值,表示删除是否成功
+		has(value):返回一个布尔值,表示该值是否为Set的成员
+		clear():清除所有值,没有返回值
+	*/
+	let s=new Set();
+	console.log(s);
+
+	s.add(11);
+	console.log(s);
+	console.log(s.size);
+
+	s.add(22);
+	console.log(s);
+	console.log(s.size);
+
+	s.add(11);
+	console.log(s);
+	console.log(s.size);
+
+	s.add(33);
+	console.log(s);
+	console.log(s.size);
+
+	s.delete(22);
+	console.log(s.delete(22))
+	console.log(s);
+	console.log(s.size);
+
+	s.has(33);
+	console.log(s.has(33));
+
+	s.clear();
+	console.log(s);
+
+	let arr=[111,222,333]
+	let s1=new Set(arr);
+	console.log(s1);
+	console.log(s1.size);
+
+	let arr1=[111,222,333,222]
+	let s2=new Set(arr1);
+	console.log(s2);
+	console.log(s2.size);
+
+// 利用Set值唯一去除数组重复值
+	var arr3 = [11,22,33,44,11,22];
+	let s3 = new Set(arr3);
+	var arr4 = [...s3];
+	console.log(arr4)
+</script>
+</html>

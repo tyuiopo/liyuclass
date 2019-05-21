@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>点击切换案例</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			list-style: none;
+			overflow: hidden;
+		}
+		#ul1{
+			margin-bottom: 20px;
+
+		}
+		#ul1 li{
+			float: left;
+			width: 70px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			margin-right: 30px;
+			cursor: pointer;
+		}
+		.active{
+			color: #ff6700;
+			border-bottom: 2px solid #ff6700;
+		}
+		#ul2 li{
+			width: 300px;
+			height: 600px;
+			line-height: 600px;
+			text-align: center;
+			font-size: 30px;
+			border:1px solid;
+			margin-bottom: 20px;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<ul id="ul1">
+		<li class="active">电脑</li>
+		<li>电视</li>
+		<li>音响</li>
+		<li>手机</li>
+	</ul>
+	<ul id="ul2">
+		<li style="display: block;">1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+</body>
+<script>
+	var aBtn1=document.querySelectorAll('#ul1 li');
+	var aBtn2=document.querySelectorAll('#ul2 li');
+	for(var i=0;i<aBtn1.length;i++){
+		aBtn1[i].index=i;
+		aBtn1[i].onclick=function(){
+			for(var j=0;j<aBtn1.length;j++){
+				aBtn1[j].className='';
+				aBtn2[j].style.display='none';
+			}
+			// console.log(i);
+			this.className='active';
+			aBtn2[this.index].style.display='block';
+		}
+	}
+	
+</script>
+</html>

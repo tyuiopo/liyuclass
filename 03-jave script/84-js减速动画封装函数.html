@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>81-js减速动画封装函数</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			margin-top: 20px;
+			background: #f76;
+			opacity: 0.4;
+		}
+	</style>
+</head>
+<body>
+	<div id="box1">变宽</div>
+	<div id="box2">变高</div>
+	<div id="box3">变色</div>
+</body>
+<script>
+	var oBox1=document.getElementById('box1');
+	var oBox2=document.getElementById('box2');
+	var oBox3=document.getElementById('box3');
+	function animate(obj,attr,target){
+		clearInterval(obj.tmer);
+		obj.tmer=setInterval(function(){
+			var current=parseFloat(getComputedStyle(obj,false)[attr])
+			if(attr=='opacity'){
+				current=Math.round(iOpacity*100);
+			}
+			iSneep=(target-current)/10
+			iSneep= iSneep<0?Math.floor(iSneep):Math.ceil(iSneep)
+
+			if(target==current){
+				clearInterval(obj.tmer);
+			}else{
+				if(attr=='opacity'){
+					obj.style.opacity=(current+iSneep)/100;
+				}else{
+					obj.style[attr]=current+iSneep+'px';
+				}
+			}
+		},30)
+	}
+
+	oBox1.onmouseover=function(){
+		animate(oBox1,'width',400)
+	}
+</script>
+</html>
