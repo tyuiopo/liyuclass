@@ -1,7 +1,13 @@
 
 import { createStore,applyMiddleware } from 'redux'
+
+//redux-thunk 是redux的一个中间件,是对action和store的中间的dispatch方法的升级,
+//让dispatch方法可以处理一个函数,所以用了redux-thunk后action不仅可以是一个对象,也可以是一个函数
 import thunk from 'redux-thunk';
+
+//判断开发环境还是生成环境的配置
 import { createLogger } from 'redux-logger';
+
 import reducer from './reducer.js'
 
 //1.store是负责整个数据的管理(获取最新的state,派发action,监听state的改变)

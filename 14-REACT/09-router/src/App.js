@@ -74,11 +74,10 @@ class App extends Component{
 							<Link to="/users/profile">/users/profile</Link>
 						</li>												
 					</ul>
-					<Route exact path="/" component={Home} />				
+					<Route exact path="/" component={Home} />			
 					<Route path="/about" render={()=>(<h1>this about page</h1>)} />							
 					<ProtectRoute path="/info" component={Info}  />	
 					<ProtectRoute path="/users" component={User}  />
-
 				</div>
 			</Router>
 		)
