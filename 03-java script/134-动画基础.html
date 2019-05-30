@@ -32,6 +32,11 @@
 	<div class="line"></div>
 </body>
 <script>
+	/*
+	核心原理:
+		位置移动一般需要元素绝对定位
+		在循环定时器中按一定的值(速度)改变元素的状态直到到达目标值为止(清除循环定时器)
+	*/
 	var oBtn = document.getElementById('btn');
 	var oBox = document.getElementById('box');
 	var timer = 0;

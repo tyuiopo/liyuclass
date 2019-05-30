@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>027-弹性布局-项目属性-flex-shrink.html</title>
+	<style>
+	/*
+		flex-basis 定义了在分配多余空间之前,项目占据的大小,浏览器根据这个属性,计算是否有多余空间,它的默认值为auto,即项目的本来大小
+		
+		flex 是flex-grow,flex-shrink,flex-basis的简写,默认值为0 1 auto,后两个属性可选
+	*/
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father{
+			width: 1000px;
+			height: 600px;
+			border: 1px solid #000;
+			margin: 50px auto;
+			/*弹性布局设置*/
+			display: flex;
+
+		}
+		.son{
+			height: 50px;
+		}
+		.son1{
+			width: 100px;
+			background: orange;
+			flex-grow: 1;
+			flex-basis: 200px;
+		}
+		.son2{
+			width: 200px;
+			background: yellow;
+			flex-grow: 1;
+		}
+		.son3{
+			width: 400px;
+			background: tomato;
+			flex-grow: 1;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son son1">son1</div>
+		<div class="son son2">son2</div>
+		<div class="son son3">son3</div>
+	</div>
+</body>
+</html>
