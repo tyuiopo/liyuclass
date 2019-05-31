@@ -50,8 +50,10 @@
 <body>
 	<div id="box1">
 	</div>
+	<!-- 
 	<div id="box2">
-	</div>	
+	</div>
+	 -->
 </body>
 <script src="js/util.js"></script>
 <script>
@@ -160,6 +162,8 @@
 			}
 		}
 	}
+
+
 	Carousel.prototype.tab = function(){
 		//1.清除所有
 		for(var i = 0;i<this.aImg.length;i++){
@@ -171,8 +175,10 @@
 		this.oUlImg.children[this.now].style.zIndex = 50;
 		// this.oUlImg.children[this.now].style.opacity = 1;
 		animate(this.oUlImg.children[this.now],{opacity:100});
-		this.oUlBtn.children[this.now].className = 'active';				
+		this.oUlBtn.children[this.now].className = 'active';
 	}
+
+
 	Carousel.prototype.auto = function(){
 		var timer = 0;
 		var _this = this;
@@ -191,14 +197,16 @@
 		aImg:['images/ad1.jpg','images/ad2.jpg','images/ad3.jpg'],
 		width:830,
 		height:440,
-		playDuration:1000
+		playDuration:3000
 	});
+	/*
 	new Carousel({
 		id:'box2',
 		aImg:['images/ad1.jpg','images/ad2.jpg','images/ad3.jpg'],
 		width:830,
 		height:440,
-		playDuration:1000
+		playDuration:2500
 	});	
+	*/
 </script>
 </html>

@@ -1,9 +1,3 @@
-/*
-* @Author: TomChen
-* @Date:   2018-11-22 18:22:03
-* @Last Modified by:   TomChen
-* @Last Modified time: 2018-11-22 18:58:57
-*/
 
 function toChange(){
 	//alert('hi')
