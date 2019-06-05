@@ -15,10 +15,11 @@
 </body>
 <script>
 	var i=0;
+	
 	function Go(fn,wait){
-		var lastTime=Date.now();
+		var lastTime=Date.now();//最后时间
 		return function(){
-			var currentime=Date.now();
+			var currentime=Date.now();//当前时间
 			if(currentime-lastTime>wait){
 				fn();
 				lastTime=Date.now();
