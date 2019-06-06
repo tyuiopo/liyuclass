@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>20-数组的高级应用</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var str=[0,1,2,3,5,7,10,20,3,5,0]
+
+	
+	//遍历  遍历不会生成新的数组,没有返回值
+	/*
+	var str1 = str.forEach(function(value,index){
+		console.log('value,index',value,index)
+		return value
+	})
+	console.log(str1)
+	*/
+
+
+	//映射  遍历数组,把函数的每一次返回值映射成新的数组并返回
+	/*
+	var str1 = str.map(function(value,index){
+		console.log('value,index',value,index)
+		return value*10
+	})
+	console.log(str1)
+	*/
+
+	//过滤  遍历数组,把函数的每一次返回值为真的原数组中的值组成新的数组并返回
+	/*
+	var str1 = str.filter(function(value,index){
+		console.log('value,index',value,index)
+		// return value>5
+		// return true
+		return false
+	})
+	console.log(str1)
+	*/
+
+	//全真判断  遍历数组,所有值为真的情况下返回真,否则返回假
+	/*
+	var isAllTrue = str.every(function(value,index){
+		console.log('value,index',value,index);
+		return value > 0;
+	});
+	console.log(isAllTrue);
+	*/
+
+	//有真判断  遍历数组,有一个值为真的情况下返回真,否则返回假
+	var isHasTrue = str.some(function(value,index){
+		console.log('value,index',value,index);
+		return value > 1000;
+	});
+	console.log(isHasTrue);
+</script>
+</html>
