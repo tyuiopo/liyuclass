@@ -2,7 +2,6 @@
 
 //处理POST请求
 
-
 var  http=require('http');
 var fs=require('fs');
 var url=require('url')
@@ -16,7 +15,7 @@ var server=http.createServer(function(req,res){
 		res.end('/favicon.ico')
 	}
 	if(req.method=='POST'){
-		// res.end('post data...')
+		//接收数据
 		var body='';
 		req.on('data',function(chunk){
 			body+=chunk;
@@ -27,11 +26,14 @@ var server=http.createServer(function(req,res){
 		})
 	}else if(req.method=='GET'){
 		if(urlStr.search(/\?/)!=-1){
+			//字符串转换对象
 			var parm=url.parse(urlStr,true).query;
+			//对象转换JSON对象
 			var json=JSON.stringify(parm);
 			res.end(json);
 		}
 		var filePath='./'+urlStr;
+		//读取文件
 		fs.readFile(filePath,function(err,data){
 			if(!err){
 				res.end(data);
@@ -43,7 +45,6 @@ var server=http.createServer(function(req,res){
 	}else{
 		res.end('ok');
 	}
-	
 });
 server.listen(3000,'127.0.0.1',function(){
 	console.log('Sever is running at http://127.0.0.1:3000')

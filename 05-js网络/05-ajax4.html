@@ -8,9 +8,7 @@
 	<button id="btn">测试</button>
 </body>
 <script>
-
 	//封装函数
-
 
 	function ajax(method,url,data,fnSucc,fnFailed){
 		//生成ajax对象(购买电话)
@@ -49,11 +47,13 @@
 			}
 		}
 	}
+	/*
 	var oBtn=document.getElementById('btn');
 
 	oBtn.onclick=function(){
-		ajax(	'get',
-				'http://127.0.0.1:3000/06-data.json',
+		ajax(	
+				'get',
+				'http://127.0.0.1:3000/',
 				'{"name":"tom","age":18}',
 				function(obj){
 					console.log(obj);
@@ -63,5 +63,6 @@
 				}
 			)
 	}
+	*/
 </script>
 </html>

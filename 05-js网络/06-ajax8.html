@@ -9,7 +9,7 @@
 </body>
 <script>
 
-	//ajax案例练习
+	//跨域解决方案-CORS-复杂请求
 
 	function ajax(method,url,data,fnSucc,fnFailed){
 		//生成ajax对象(购买电话)
@@ -32,6 +32,10 @@
 		}else{
 			//建立连接(拨号)
 			oAjax.open(method,url,true);
+
+			//设置请求头
+			oAjax.setRequestHeader('Kuazhu-Test-Header','Kuazhu-Test-Header-Content')
+
 			//发送信息(说话)
 			oAjax.send();	
 		}
@@ -40,6 +44,18 @@
 		oAjax.onreadystatechange=function(){
 			// console.log(oAjax.readyState);
 			if(oAjax.readyState==4){//数据完全返回
+				/*
+				跨域解决方案-CORS-简单请求
+				getResponseHeader方法获取服务区响应的字段	
+					默认6个Cache-Control Content-Language Content-Type Expires Last-Modified Pragma
+				*/
+				console.log(oAjax.getResponseHeader('Content-Type'))
+				//除6个以外的获取服务区响应的字段
+				console.log(oAjax.getResponseHeader('Date'))
+				console.log(oAjax.getResponseHeader('Access-Control-Allow-Origin'))
+				//自定义字段
+				console.log(oAjax.getResponseHeader('Kuazhu-Test'))
+
 				if(oAjax.status==200){//请求成功
 					try{
 						var obj = JSON.parse(oAjax.responseText);
@@ -52,21 +68,19 @@
 				}
 			}
 		}
+		//如果Origin指定的源不在许可范围内  从而抛出一个错误，被XMLHttpRequest的onerror回调函数捕获
+		oAjax.onerror = function(){
+			console.log('Origin指定的源不在许可范围内')
+		}
 	}
 	var oBtn=document.getElementById('btn');
 
 	oBtn.onclick=function(){
-		ajax(	'get',
+		ajax(	'put',
 				'http://127.0.0.1:3001/06-data.json',
 				'',
-				function(arr){
-					var oUl=document.createElement('ul');
-					for(var i=0;i<arr.length;i++){
-						var oLi=document.createElement('li');
-						oLi.innerHTML='姓名:'+arr[i].name+' 年龄:'+arr[i].age
-						oUl.appendChild(oLi)
-					}
-					document.body.appendChild(oUl);
+				function(obj){
+					console.log(obj)
 				},
 				function(status){
 					console.log(status);

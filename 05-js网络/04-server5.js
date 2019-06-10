@@ -1,16 +1,13 @@
 //ajax案例练习
 
-
-
 var  http=require('http');
 var fs=require('fs');
 var url=require('url')
 
-
 var server=http.createServer(function(req,res){
 	var urlStr=req.url;
-	console.log(req.method);
-	console.log('req.url::',urlStr)
+	// console.log(req.method);
+	// console.log('req.url::',urlStr)
 	if(urlStr=='/favicon.ico'){
 		res.end('/favicon.ico')
 	}
@@ -31,6 +28,7 @@ var server=http.createServer(function(req,res){
 			res.end(json);
 		}
 		var filePath='./'+urlStr;
+		//读取文件
 		fs.readFile(filePath,function(err,data){
 			if(!err){
 				res.end(data);

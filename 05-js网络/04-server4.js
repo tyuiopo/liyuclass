@@ -30,6 +30,7 @@ var server=http.createServer(function(req,res){
 			res.end(json);
 		}
 		var filePath='./'+urlStr;
+		//读取文件
 		fs.readFile(filePath,function(err,data){
 			if(!err){
 				res.end(data);
