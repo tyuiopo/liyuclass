@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jsonp</title>
+</head>
+<!-- 
+	jsonp的原理：
+		利用script 的 scr属性不受跨域的影响 
+-->
+<body>
+	<button id="btn">测试</button>
+</body>
+<script>
+	function HandCallback(obj){
+		console.log(obj)
+	}
+</script>
+<script>
+	var oBtn = document.getElementById('btn')
+
+	oBtn.onclick = function(){
+		var script = document.createElement('script')
+		script.src = "http://127.0.0.1:3001/getData?callback=HandCallback"
+		document.body.appendChild(script)
+	}
+</script>
+
+<!-- <script src="http://127.0.0.1:3001/getData?callback=HandCallback"></script> -->
+</html>
