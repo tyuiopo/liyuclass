@@ -15,7 +15,8 @@
 
 		//获取,注意:只能获取第一个元素的值
 		console.log($('input').attr("name"));
-		console.log($('input').eq(1).attr("name"));
+		console.log('eq1',$('input').eq(1).attr("name"));
+		console.log('eq2',$('input:eq(1)').attr("name"));
 		console.log($('input').prop("name"));
 
 		//设置,注意:设置所有元素的值
