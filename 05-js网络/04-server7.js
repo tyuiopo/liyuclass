@@ -43,6 +43,7 @@ var server=http.createServer(function(req,res){
 		})
 	}else if(req.method=='GET'){
 		if(urlStr.search(/\?/)!=-1){
+			//判断浏览器请求是否有带参数
 			var parm=url.parse(urlStr,true).query;
 			var json=JSON.stringify(parm);
 			res.end(json);

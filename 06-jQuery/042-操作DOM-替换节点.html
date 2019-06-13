@@ -18,7 +18,7 @@
 <script>
 	$(function(){
 
-		//jQuery对象1.replaceWith(jQuery对象2|HTML代码),用jQuery对象2中的节点替换jQuery对象1中的节点
+		//jQuery对象1.replaceWith(jQuery对象2|HTML代码),用jQuery对象2中的节点替换jQuery对象1中的节点,后面的替换前面的
 		$('button').eq(0).on('click',function(){
 			var $H=$('<h1>我是大标题</h1>')
 			$('div').replaceWith($H);

@@ -25,6 +25,7 @@ var server=http.createServer(function(req,res){
 			res.end(body);
 		})
 	}else if(req.method=='GET'){
+		//判断浏览器请求是否有带参数
 		if(urlStr.search(/\?/)!=-1){
 			//字符串转换对象
 			var parm=url.parse(urlStr,true).query;
