@@ -1,9 +1,3 @@
-
-//跨域解决方案-CORS-简单请求
-
-
-
-
 var  http=require('http');
 var fs=require('fs');
 var url=require('url')

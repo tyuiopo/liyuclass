@@ -5,15 +5,22 @@
 	<title>Ajax-jsonp</title>
 </head>
 <body>
-	<button>点击获取</button>
+	<!-- 用jsonp解决跨域问题 -->
 	<button>点击获取</button>
 </body>
 <script src="js/jquery-1.12.4.js"></script>
 <script>
 	$(function(){
-		&('button').on('click',function(){
+		$('button').on('click',function(){
 			$.ajax({
-				url:'http://http://127.0.0.1:3000',
+				url:"http://127.0.0.1:3001",
+				dataType:'jsonp',
+				jsonp:"callback",
+				success:function(data,Msg,jqXHR){
+					console.log(data)
+					console.log(Msg)
+					console.log(jqXHR)
+				}
 			})
 		})
 	})

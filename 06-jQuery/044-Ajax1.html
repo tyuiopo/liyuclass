@@ -12,24 +12,41 @@
 	$(function(){
 		$('button').on('click',function(){
 			$.ajax({
-				url:'044-data.json',//请求地址
-				type:'GET',//请求方法
-				// data:{name:'Arry',age:28},//发送到服务器的数据，字符串键值对或者对象
-				dataType:'json',//返回数据的类型,可以是xml json script text html,默认是text
-				success:function(data,Msg,jqHTL){
+				//请求地址
+				url:'044-data.json',
+
+				//请求方法
+				type:'GET',
+
+				//发送到服务器的数据，字符串键值或者对象
+				data:{name:'Arry',age:28},
+
+				//返回数据的类型,可以是xml json script text
+				dataType:'json',
+
+				//请求成功后的回调函数(返回数据,状态信息,jqXHR对象)
+				success:function(data,Msg,jqXHR){
 					console.log(data);
 					console.log(Msg);
-					console.log(jqHTL);
-				},//请求成功后的回调函数
-				error:function(jqHTL,Msg){
-					console.log(jqHTL);
+					console.log(jqXHR);
+				},
+
+				//请求失败后的回调函数(jqXHR对象,状态信息)
+				error:function(jqXHR,Msg){
+					console.log(jqXHR);
 					console.log(Msg);
-				},//请求失败后的回调函数
-				complete:function(jqHTL,Msg){
-					console.log(jqHTL);
+				},
+
+				//请求完成后的回调函数(jqXHR对象,状态信息)
+				complete:function(jqXHR,Msg){
+					console.log(jqXHR);
 					console.log(Msg);
-				},//请求完成后的回调函数
-				timeout:3000,//设置请求超时的时间,单位为毫秒
+				},
+
+				//设置请求超时的时间,单位为毫秒
+				timeout:3000,
+
+				//设置不同状态码的回调函数
 				statusCode:{
 					404:function(){
 						console.log('404:::');
@@ -37,8 +54,10 @@
 					503:function(){
 						console.log('503:::');
 					},
-				},//设置不同状态码的回调函数
-				headers:{test:'test'},//设置请求头
+				},
+
+				//设置请求头
+				headers:{test:'test'},
 			})
 		})
 	})

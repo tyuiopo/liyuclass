@@ -26,6 +26,7 @@
 			var DEFAUTLS={color:'red'};
 			options=$.extend({},DEFAUTLS,options);
 			return this.each(function(index,elem){
+				// console.log(this)
 				// console.log(index,elem);
 				this.style.color=options.color;
 			});
