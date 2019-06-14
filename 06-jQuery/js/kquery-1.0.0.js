@@ -1,5 +1,6 @@
 
 
+// 创建基本框架
 
 (function(window){
 	var kQuery=function(){
@@ -8,6 +9,7 @@
 	kQuery.prototype={
 		constructor:kQuery,
 		init:function(){
+
 		}
 	};
 	kQuery.prototype.init.prototype=kQuery.prototype;
