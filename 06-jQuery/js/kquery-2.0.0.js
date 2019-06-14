@@ -46,30 +46,17 @@ $.fn.extend({
 
 }
 })(jQuery);
+	/*
+	var DERTY={
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	// var DERTY={
-
-	// }
-	// $.fn.extend(function(options){
-	// 	shown:function(options){
-	// 		return this.each(function(){
-	// 			var $elem=$(this);
-	// 			var options=extend({},DERTY,options);
-	// 			$elem.show();
-	// 		});
-	// 	},
-	// })
+	}
+	$.fn.extend(function(options){
+		shown:function(options){
+			return this.each(function(){
+				var $elem=$(this);
+				var options=extend({},DERTY,options);
+				$elem.show();
+			});
+		},
+	})
+	*/

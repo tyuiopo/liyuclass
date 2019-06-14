@@ -4,14 +4,14 @@
 
 (function(window){
 	var kQuery=function(){
-		return new kQuery.prototype.init();
+		return new kQuery.fn.init();
 	};
-	kQuery.prototype={
+	kQuery.fn = kQuery.prototype ={
 		constructor:kQuery,
 		init:function(){
 
 		}
 	};
-	kQuery.prototype.init.prototype=kQuery.prototype;
+	kQuery.fn.init.prototype=kQuery.fn;
 	window.kQuery=window.$=kQuery;
 })(window);

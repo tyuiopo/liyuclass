@@ -71,17 +71,18 @@
 				}
 				return arr;
 			}
-		}
-		
+		}	
 	};
-	//extend方法
-	kQuery.fn.exend=kQuery.exend=function(potions){
+	//extend方法(插件)
+	kQuery.fn.extend=kQuery.extend=function(potions){
+		console.log(this)
 		for(key in potions){
 			this[key]=potions[key];
 		}
 	};
 
-	kQuery.exend({
+	//静态方法
+	kQuery.extend({
 		isFunction:function(str){
 		return typeof str=='function';
 		},
