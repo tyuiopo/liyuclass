@@ -3,14 +3,27 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+	</style>
 </head>
 <body>
+	<!--
+		Canvas是一个画布,用来在网页上绘制图像 
+		创建Canvas：
+			<canvas></canvas>
+			canvas默认的宽高是300px*150px,一般建议在js中设置画布的大小 
+	 -->
 	<canvas id="canvas"></canvas>
 </body>
 <script>
 	//获取canvas的DOM元素
 	var oCanvas = document.getElementById('canvas');
 	console.log(oCanvas);
+
 	//设置画布的宽高
 	oCanvas.width = 800;
 	oCanvas.height = 500;
@@ -29,5 +42,15 @@
 	ctx.closePath();//封闭路径
 	ctx.stroke();//描边
 	ctx.fill();//闭合路径后填充 
+</script>
+<script>
+	/*
+	推荐插件
+		http://echarts.baidu.com/
+		https://antv.alipay.com/zh-cn/index.html
+		http://www.chartjs.org/
+		https://www.highcharts.com
+		https://d3js.org/	
+	*/
 </script>
 </html>

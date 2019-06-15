@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>拖拽</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#container{
+			width: 400px;
+			height: 400px;
+			background-color: grey;
+		}
+		#target{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="container"></div>
+	<div id="target" draggable=true></div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	/*
+	容器:
+		ondrop 当放置被拖动元素时触发
+		ondragover 被拖动元素正在到放置到容器时触发,默认无法把元素放置到其他元素中,如果需要设置允许放置,我们必须阻止对元素的默认处理方式。
+		ondragenter 当被拖动元素进入容器时触发
+		ondragleave 当被拖动元素离开容器时触发
+		ondragend 被拖动元素在容器中松开鼠标时触发
+		ondrag 容器中的被拖动元素拖动时触发
+
+
+	被拖拽元素:
+		ondragstart 当元素开始拖动时触发
+		ondrag 被拖动元素拖动时触发
+		ondragend 拖拽时松开鼠标时触发
+*/
+
+	;(function($){
+		$('#target')
+		.on('dragstart',function(ev){
+			console.log(ev.target)
+			//在被拖拽元素储存(设置)数据
+			ev.originalEvent.dataTransfer.setData('targetId',ev.target.id)
+		})
+
+		$('#container')
+		.on('drop',function(ev){
+			//在容器获取数据
+			var targetId = ev.originalEvent.dataTransfer.getData('targetId')
+			$(this).append($('#'+targetId))
+		})
+		.on('dragover',function(ev){
+			ev.preventDefault();
+		})
+	})(jQuery);
+</script>
+</html>

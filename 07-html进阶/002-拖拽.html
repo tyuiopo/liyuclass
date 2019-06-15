@@ -9,8 +9,8 @@
 			padding: 0;
 		}
 		.box1{
-			width: 200px;
-			height: 200px;
+			width: 400px;
+			height: 400px;
 			background-color: grey;
 		}
 		.box2{
@@ -28,28 +28,31 @@
 <script>
 	/*
 	容器:
-	ondrop 当放置被拖动元素时触发
-	ondragover 被拖动元素正在到放置到容器时触发,默认无法把元素放置到其他元素中,如果需要设置允许放置,我们必须阻止对元素的默认处理方式。
-	ondragenter 当被拖动元素进入容器时触发
-	ondragleave 当被拖动元素离开容器时触发
-	ondragend 被拖动元素在容器中松开鼠标时触发
-	ondrag 容器中的被拖动元素拖动时触发
+		ondrop 当放置被拖动元素时触发
+		ondragover 被拖动元素正在到放置到容器时触发,默认无法把元素放置到其他元素中,如果需要设置允许放置,我们必须阻止对元素的默认处理方式。
+		ondragenter 当被拖动元素进入容器时触发
+		ondragleave 当被拖动元素离开容器时触发
+		ondragend 被拖动元素在容器中松开鼠标时触发
+		ondrag 容器中的被拖动元素拖动时触发
 
 
 	被拖拽元素:
-	ondragstart 当元素开始拖动时触发
-	ondrag 被拖动元素拖动时触发
-	ondragend 拖拽时松开鼠标时触发
+		ondragstart 当元素开始拖动时触发
+		ondrag 被拖动元素拖动时触发
+		ondragend 拖拽时松开鼠标时触发
+
+	拖拽插件
+		jquery.pep.js 官网: http://pep.briangonzalez.org/
 */
-
-
 
 	;(function($){
 		$('.box1')
 		.on('drop',function(){
 			console.log('ondrop 当放置被拖动元素时触发');
+			$(this).append($('.box2'))
 		})
 		.on('dragover',function(ev){
+			console.log('ondragover 被拖动元素正在到放置到容器时触发,默认无法把元素放置到其他元素中,如果需要设置允许放置,我们必须阻止对元素的默认处理方式')
 			ev.preventDefault();
 		})
 		.on('dragenter',function(){
@@ -60,7 +63,6 @@
 		})
 		.on('dragend',function(){
 			console.log('ondragend 被拖动元素在容器中松开鼠标时触发');
-			$(this).append($('.box2'))
 		})
 		.on('drag',function(){
 			console.log('ondrag 容器中的被拖动元素拖动时触发')
