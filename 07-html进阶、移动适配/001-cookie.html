@@ -7,4 +7,65 @@
 <body>
 	<button>点击</button>
 </body>
+<script>
+	//浏览器端创建cookie
+	/*
+	document.cookie = 'username = Tom';
+	document.cookie = 'age = 18';
+	console.log(document.cookie)
+	*/
+
+	//设置过期时间
+	/*
+    var oDate = new Date();
+    oDate.setDate(oDate.getDate() + 14);
+    document.cookie = "name=Tom;expires="+oDate;
+
+	document.cookie = 'age = 18;max-age = 10'
+	*/
+
+
+	//设置cookie函数
+	
+	function setCookie (key,val,iDate){
+		var oDate = new Date()
+		oDate.setDate(oDate.getDate() + iDate);
+		document.cookie = key+'='+val+';expires='+oDate;		
+	}
+	setCookie('username','Tom',10)
+	setCookie('age',10,1)
+	setCookie('majeck','computer',1)
+	
+
+
+	//获取cookie函数
+
+	function getCookeie(key){
+		var str = document.cookie
+		// console.log(str)
+		var arr1 = str.split(';')
+		// console.log(arr1)
+		var res = ''
+		for(var i = 0;i<arr1.length;i++){
+			// console.log(arr1[i])
+			var arr2 = arr1[i].split('=')
+			// console.log(arr2)
+			if(key.trim() == arr2[0].trim()){
+				res = arr2[1];
+				break;
+			}
+		}
+		return res
+	}
+	console.log(getCookeie('age'))
+
+
+	//删除cookie函数
+		//原理：设置cookie的时间值 让时间过期
+	function removeCookie(key){
+		setCookie(key,false,-1)
+	}
+	removeCookie('majeck')
+
+</script>
 </html>

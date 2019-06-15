@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	localStorage 和 sessionStorage的存储时效不同:
+		localStorage 持久化
+		sessionStorage 网页会话结束失效
+
+	loocalStorage 和 sessionStorage的存储容量不同:
+		localStorage 2-5Mb左右
+		sessionStorage 2-10Mb左右,部分浏览器 没有限制
+
+	注意点:
+		Storage仅能存储字符串
+		Storage的数据不能在不同的域中共享
+	*/
+
+	
+	/*
+	console.log(localStorage)
+	console.log(sessionStorage)
+	*/
+	// localStorage 和 sessionStorage的api相同
+	// setItem(key,value) 设置
+		localStorage.setItem('name','tom')
+		localStorage.setItem('age','18')
+		localStorage.setItem('mejor','computer')
+
+	// getItem(key) 获取
+		console.log(localStorage.getItem('name'))
+
+	// removeItem(key) 删除
+		localStorage.removeItem('mejor')
+
+	// clear() 清除所有
+		// localStorage.clear()
+
+	// length 内容个数
+		console.log(localStorage.length)
+
+	// key(num) 获取key的值
+		console.log(localStorage.key(0))
+		console.log(localStorage.key(1))
+
+</script>
+</html>
