@@ -41,9 +41,9 @@ div {
 	height:0;
 	border-style:solid;
 	overflow: hidden;
-*/
+	*/
   border-width: 100px;
-  border-color: #ffc0cb transparent transparent transparent;
+  border-color: transparent transparent transparent #ffc0cb;
   width: 0;
   height: 0;
   border-style: solid;
@@ -70,7 +70,7 @@ div {
   background-color: #ff6700;
 }
 .box5 {
-  font-size: 3px;
+  font-size: 30px;
 }
 /*
 .box6{
@@ -87,5 +87,5 @@ div {
   background: #808080 !important;
 }
 .box8 {
-  width: 10px;
+  width: 100px;
 }
