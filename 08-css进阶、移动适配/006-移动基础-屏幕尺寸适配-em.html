@@ -4,7 +4,11 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
 	<title>屏幕尺寸适配-em</title>
-	<!-- 通过改变body上默认的字体大小来改变适配 -->
+	<!--
+		通过改变body上默认的字体大小来改变适配
+		当前元素字体的大小,1em=当前元素的font-size
+		可以根据不同的屏幕来设置元素的font-size,再利用em来适配,但是元素的font-size可以被继承,同时js和css经常会修改font-size,如果用em来适配的话容易造成混乱
+	 -->
 	<style>
 		*{
 			margin: 0;
